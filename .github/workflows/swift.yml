@@ -17,4 +17,4 @@ jobs:
         bundler-cache: true
     - name: Run swiftlint
       working-directory: ./../../carowash/carowash/
-      run: bundle exec fastlane swiftLintLane
+      run: bundle exec fastlane swiftLintLane --config ./../../carowash/carowash/.swiftlint.yml
