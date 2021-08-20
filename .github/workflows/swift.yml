@@ -16,5 +16,4 @@ jobs:
         # runs 'bundle install' and caches installed gems automatically
         bundler-cache: true
     - name: Run swiftlint
-      working-directory: ./../../carowash/carowash/
-      run: bundle exec fastlane swiftLintLane --config ./../../carowash/carowash/.swiftlint.yml
+      run: bundle exec fastlane swiftLintLane
