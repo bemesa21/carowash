@@ -5,12 +5,15 @@ on:
     branches: [ main ]
 
 jobs:
-  
   swiftLint:
-    runs-on: macos-latest
+    runs-on: macos-latest    
     steps:
     - uses: actions/checkout@v2
-    - name: Install Bundle
-      run: bundle install
+    - uses: ruby/setup-ruby@v1
+      with:
+        # Not needed with a .ruby-version file
+        ruby-version: 3.0.0
+        # runs 'bundle install' and caches installed gems automatically
+        bundler-cache: true
     - name: Run swiftlint
       run: bundle exec fastlane swiftLintLane

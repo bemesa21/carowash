@@ -87,5 +87,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+#Gemfiles
 Gemfile
 Gemfile.lock
