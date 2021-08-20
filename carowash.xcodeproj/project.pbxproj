@@ -16,6 +16,9 @@
 		92FB3F2526CF47BF001D068B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */; };
 		92FB3F3026CF47BF001D068B /* carowashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F2F26CF47BF001D068B /* carowashTests.swift */; };
 		92FB3F3B26CF47BF001D068B /* carowashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F3A26CF47BF001D068B /* carowashUITests.swift */; };
+		A4ECCB8B9DA780DD93499EF4 /* Pods_carowash_carowashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8626D4D61E18585A4A2D2F /* Pods_carowash_carowashUITests.framework */; };
+		C64885B6385B2B2B15C14E1A /* Pods_carowashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */; };
+		FFF193C1439E001DA8A829B9 /* Pods_carowash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8FE4E92FDCCA4EC350EF36 /* Pods_carowash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B5B34721F4DA8EDF484119 /* Pods-carowashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.debug.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.release.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.release.xcconfig"; sourceTree = "<group>"; };
+		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
 		92FB3F1226CF47BE001D068B /* carowash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carowash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		92FB3F3626CF47BF001D068B /* carowashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carowashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F3A26CF47BF001D068B /* carowashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carowashUITests.swift; sourceTree = "<group>"; };
 		92FB3F3C26CF47BF001D068B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95AD500995A91207937F90D4 /* Pods-carowash-carowashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash-carowashUITests.release.xcconfig"; path = "Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BD8626D4D61E18585A4A2D2F /* Pods_carowash_carowashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowash_carowashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8FE4E92FDCCA4EC350EF36 /* Pods_carowash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A2A985DD5818B7381B2160 /* Pods-carowash-carowashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash-carowashUITests.debug.xcconfig"; path = "Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB1D7242FF7244BF557AD522 /* Pods-carowash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.release.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF193C1439E001DA8A829B9 /* Pods_carowash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64885B6385B2B2B15C14E1A /* Pods_carowashTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4ECCB8B9DA780DD93499EF4 /* Pods_carowash_carowashUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6405FAB58A77ADE346CB5F89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */,
+				EB1D7242FF7244BF557AD522 /* Pods-carowash.release.xcconfig */,
+				E4A2A985DD5818B7381B2160 /* Pods-carowash-carowashUITests.debug.xcconfig */,
+				95AD500995A91207937F90D4 /* Pods-carowash-carowashUITests.release.xcconfig */,
+				04B5B34721F4DA8EDF484119 /* Pods-carowashTests.debug.xcconfig */,
+				2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92FB3F0926CF47BE001D068B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,8 @@
 				92FB3F2E26CF47BF001D068B /* carowashTests */,
 				92FB3F3926CF47BF001D068B /* carowashUITests */,
 				92FB3F1326CF47BE001D068B /* Products */,
+				6405FAB58A77ADE346CB5F89 /* Pods */,
+				B25177DFA5B0E9387A7BE432 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +162,16 @@
 			path = carowashUITests;
 			sourceTree = "<group>";
 		};
+		B25177DFA5B0E9387A7BE432 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA8FE4E92FDCCA4EC350EF36 /* Pods_carowash.framework */,
+				BD8626D4D61E18585A4A2D2F /* Pods_carowash_carowashUITests.framework */,
+				0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92FB3F3F26CF47BF001D068B /* Build configuration list for PBXNativeTarget "carowash" */;
 			buildPhases = (
+				BBE2E9A4EF0E6F6A1ED30AF6 /* [CP] Check Pods Manifest.lock */,
 				92FB3F0E26CF47BE001D068B /* Sources */,
 				92FB3F0F26CF47BE001D068B /* Frameworks */,
 				92FB3F1026CF47BE001D068B /* Resources */,
@@ -155,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92FB3F4226CF47BF001D068B /* Build configuration list for PBXNativeTarget "carowashTests" */;
 			buildPhases = (
+				BB2C6229820C78D010D44252 /* [CP] Check Pods Manifest.lock */,
 				92FB3F2726CF47BF001D068B /* Sources */,
 				92FB3F2826CF47BF001D068B /* Frameworks */,
 				92FB3F2926CF47BF001D068B /* Resources */,
@@ -173,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92FB3F4526CF47BF001D068B /* Build configuration list for PBXNativeTarget "carowashUITests" */;
 			buildPhases = (
+				2739F1C216523302BF55E528 /* [CP] Check Pods Manifest.lock */,
 				92FB3F3226CF47BF001D068B /* Sources */,
 				92FB3F3326CF47BF001D068B /* Frameworks */,
 				92FB3F3426CF47BF001D068B /* Resources */,
@@ -255,6 +299,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2739F1C216523302BF55E528 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carowash-carowashUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB2C6229820C78D010D44252 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carowashTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBE2E9A4EF0E6F6A1ED30AF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carowash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92FB3F0E26CF47BE001D068B /* Sources */ = {
@@ -437,6 +550,7 @@
 		};
 		92FB3F4026CF47BF001D068B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,6 +569,7 @@
 		};
 		92FB3F4126CF47BF001D068B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB1D7242FF7244BF557AD522 /* Pods-carowash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +588,7 @@
 		};
 		92FB3F4326CF47BF001D068B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04B5B34721F4DA8EDF484119 /* Pods-carowashTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +610,7 @@
 		};
 		92FB3F4426CF47BF001D068B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +632,7 @@
 		};
 		92FB3F4626CF47BF001D068B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4A2A985DD5818B7381B2160 /* Pods-carowash-carowashUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +652,7 @@
 		};
 		92FB3F4726CF47BF001D068B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95AD500995A91207937F90D4 /* Pods-carowash-carowashUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
