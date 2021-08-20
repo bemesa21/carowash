@@ -8,9 +8,10 @@ jobs:
   swiftLint:
     runs-on: macos-latest    
     steps:
-    - working-directory: ./../../
     - uses: actions/checkout@v2
     - name: Install Bundle
+      working-directory: ./../../
       run: bundle install
     - name: Run swiftlint
+      working-directory: ./../../
       run: bundle exec fastlane swiftLintLane
