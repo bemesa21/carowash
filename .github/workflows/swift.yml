@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Bundle
       working-directory: ./../../
-      run: pwd && ls carowash/ && bundle install
+      run: pwd && ls carowash/carowash && bundle install
     - name: Run swiftlint
       working-directory: ./../../
       run: bundle exec fastlane swiftLintLane
