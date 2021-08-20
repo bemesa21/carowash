@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install Bundle
-      working-directory: carowash/carowash
+      working-directory: ./../../carowash/carowash
       run: bundle install
     - name: Run swiftlint
-      working-directory: carowash/carowash
+      working-directory: ./../../carowash/carowash
       run: bundle exec fastlane swiftLintLane
