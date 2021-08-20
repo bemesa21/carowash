@@ -9,9 +9,12 @@ jobs:
     runs-on: macos-latest    
     steps:
     - uses: actions/checkout@v2
-    - name: Install Bundle
-      working-directory: ./../../carowash/carowash/
-      run: pwd && ls -l && bundle install
+    - uses: ruby/setup-ruby@v1
+      with:
+        # Not needed with a .ruby-version file
+        ruby-version: 3.0.0
+        # runs 'bundle install' and caches installed gems automatically
+        bundler-cache: true
     - name: Run swiftlint
       working-directory: ./../../carowash/carowash/
       run: bundle exec fastlane swiftLintLane
