@@ -5,10 +5,10 @@ on:
     branches: [ main ]
 
 jobs:
-  
   swiftLint:
-    runs-on: macos-latest
+    runs-on: macos-latest    
     steps:
+    - working-directory: ./../../
     - uses: actions/checkout@v2
     - name: Install Bundle
       run: bundle install
