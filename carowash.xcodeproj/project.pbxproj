@@ -10,7 +10,7 @@
 		92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1526CF47BE001D068B /* AppDelegate.swift */; };
 		92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1726CF47BE001D068B /* SceneDelegate.swift */; };
 		92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* LoginViewController.swift */; };
-		92FB3F1D26CF47BE001D068B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F1B26CF47BE001D068B /* Main.storyboard */; };
+		92FB3F1D26CF47BE001D068B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F1B26CF47BE001D068B /* Login.storyboard */; };
 		92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1E26CF47BE001D068B /* carowash.xcdatamodeld */; };
 		92FB3F2226CF47BF001D068B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F2126CF47BF001D068B /* Assets.xcassets */; };
 		92FB3F2526CF47BF001D068B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */; };
@@ -18,6 +18,8 @@
 		92FB3F3B26CF47BF001D068B /* carowashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F3A26CF47BF001D068B /* carowashUITests.swift */; };
 		92FB3F6F26D0BB70001D068B /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F6E26D0BB70001D068B /* colors.swift */; };
 		92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F7B26D0CDD3001D068B /* fields.swift */; };
+		92FB3FB526D0DC63001D068B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3FB426D0DC63001D068B /* Main.storyboard */; };
+		92FB3FBA26D0DCAE001D068B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3FB926D0DCAE001D068B /* HomeViewController.swift */; };
 		A4ECCB8B9DA780DD93499EF4 /* Pods_carowash_carowashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8626D4D61E18585A4A2D2F /* Pods_carowash_carowashUITests.framework */; };
 		C64885B6385B2B2B15C14E1A /* Pods_carowashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */; };
 		FFF193C1439E001DA8A829B9 /* Pods_carowash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8FE4E92FDCCA4EC350EF36 /* Pods_carowash.framework */; };
@@ -49,7 +51,7 @@
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1926CF47BE001D068B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		92FB3F1C26CF47BE001D068B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92FB3F1C26CF47BE001D068B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		92FB3F1F26CF47BE001D068B /* carowash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carowash.xcdatamodel; sourceTree = "<group>"; };
 		92FB3F2126CF47BF001D068B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92FB3F2426CF47BF001D068B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		92FB3F3C26CF47BF001D068B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92FB3F6E26D0BB70001D068B /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		92FB3F7B26D0CDD3001D068B /* fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fields.swift; sourceTree = "<group>"; };
+		92FB3FB426D0DC63001D068B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		92FB3FB926D0DCAE001D068B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95AD500995A91207937F90D4 /* Pods-carowash-carowashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash-carowashUITests.release.xcconfig"; path = "Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD8626D4D61E18585A4A2D2F /* Pods_carowash_carowashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowash_carowashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8FE4E92FDCCA4EC350EF36 /* Pods_carowash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,11 +143,13 @@
 				92FB3F1526CF47BE001D068B /* AppDelegate.swift */,
 				92FB3F1726CF47BE001D068B /* SceneDelegate.swift */,
 				92FB3F1926CF47BE001D068B /* LoginViewController.swift */,
-				92FB3F1B26CF47BE001D068B /* Main.storyboard */,
+				92FB3F1B26CF47BE001D068B /* Login.storyboard */,
 				92FB3F2126CF47BF001D068B /* Assets.xcassets */,
 				92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */,
 				92FB3F2626CF47BF001D068B /* Info.plist */,
 				92FB3F1E26CF47BE001D068B /* carowash.xcdatamodeld */,
+				92FB3FB426D0DC63001D068B /* Main.storyboard */,
+				92FB3FB926D0DCAE001D068B /* HomeViewController.swift */,
 			);
 			path = carowash;
 			sourceTree = "<group>";
@@ -293,7 +299,8 @@
 			files = (
 				92FB3F2526CF47BF001D068B /* LaunchScreen.storyboard in Resources */,
 				92FB3F2226CF47BF001D068B /* Assets.xcassets in Resources */,
-				92FB3F1D26CF47BE001D068B /* Main.storyboard in Resources */,
+				92FB3F1D26CF47BE001D068B /* Login.storyboard in Resources */,
+				92FB3FB526D0DC63001D068B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +399,7 @@
 				92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */,
 				92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */,
 				92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */,
+				92FB3FBA26D0DCAE001D068B /* HomeViewController.swift in Sources */,
 				92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,12 +436,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		92FB3F1B26CF47BE001D068B /* Main.storyboard */ = {
+		92FB3F1B26CF47BE001D068B /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				92FB3F1C26CF47BE001D068B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */ = {
