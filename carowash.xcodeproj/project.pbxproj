@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1526CF47BE001D068B /* AppDelegate.swift */; };
 		92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1726CF47BE001D068B /* SceneDelegate.swift */; };
-		92FB3F1A26CF47BE001D068B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* ViewController.swift */; };
+		92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* LoginViewController.swift */; };
 		92FB3F1D26CF47BE001D068B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F1B26CF47BE001D068B /* Main.storyboard */; };
 		92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1E26CF47BE001D068B /* carowash.xcdatamodeld */; };
 		92FB3F2226CF47BF001D068B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92FB3F2126CF47BF001D068B /* Assets.xcassets */; };
@@ -46,7 +46,7 @@
 		92FB3F1226CF47BE001D068B /* carowash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carowash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92FB3F1926CF47BE001D068B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92FB3F1926CF47BE001D068B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92FB3F1C26CF47BE001D068B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92FB3F1F26CF47BE001D068B /* carowash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carowash.xcdatamodel; sourceTree = "<group>"; };
 		92FB3F2126CF47BF001D068B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				04B5B34721F4DA8EDF484119 /* Pods-carowashTests.debug.xcconfig */,
 				2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,7 +133,7 @@
 			children = (
 				92FB3F1526CF47BE001D068B /* AppDelegate.swift */,
 				92FB3F1726CF47BE001D068B /* SceneDelegate.swift */,
-				92FB3F1926CF47BE001D068B /* ViewController.swift */,
+				92FB3F1926CF47BE001D068B /* LoginViewController.swift */,
 				92FB3F1B26CF47BE001D068B /* Main.storyboard */,
 				92FB3F2126CF47BF001D068B /* Assets.xcassets */,
 				92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */,
@@ -374,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FB3F1A26CF47BE001D068B /* ViewController.swift in Sources */,
+				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */,
 				92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */,
 				92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */,
