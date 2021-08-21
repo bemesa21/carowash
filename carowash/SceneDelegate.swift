@@ -19,7 +19,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // and attached to the scene.
         // This delegate does not imply the connecting scene or session are new
         // (see `application:configurationForConnectingSceneSession` instead).
-        guard let scene = (scene as? UIWindowScene) else { return }
+        guard let some = (scene as? UIWindowScene) else { return }
+               // it depends if the user is logged, for now just fake true
+        let isLogged = true
+        if isLogged {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
+                as? HomeViewController
+            self.window?.rootViewController = homePage
+        } else {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController")
+                as? LoginViewController
+            self.window?.rootViewController = homePage
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
