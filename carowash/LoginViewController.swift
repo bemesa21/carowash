@@ -14,14 +14,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!{
         didSet {
-            emailTextField.tintColor = rgbColor(red: 0, green: 175, blue: 255)
+            emailTextField.tintColor = UIColor.CarOWash.blueNeon
             emailTextField.setIcon(UIImage(named: "icon-email")!)
         }
      }
 
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet {
-            passwordTextField.tintColor = rgbColor(red: 0, green: 175, blue: 255)
+            passwordTextField.tintColor = UIColor.CarOWash.blueNeon
             passwordTextField.setIcon(UIImage(named: "icon-password")!)
         }
      }
@@ -38,8 +38,8 @@ class LoginViewController: UIViewController {
        gradientLayer.frame = view.bounds
      
        gradientLayer.colors = [
-        cgColorForRed(red:33, green: 118, blue: 174),
-       cgColorForRed(red: 113, green: 238, blue: 200)
+        UIColor.CarOWash.starComandBlue.cgColor,
+        UIColor.CarOWash.aquamarine.cgColor
       ]
      
        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
@@ -48,32 +48,21 @@ class LoginViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at:0)
     }
      
-    func cgColorForRed(red: CGFloat, green: CGFloat, blue: CGFloat) -> AnyObject {
-       return rgbColor(red: red, green: green, blue: blue).cgColor as AnyObject
-    }
-    
-    func rgbColor(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor{
-        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0)
-    }
-    
     func setupTextFields(){
-        let backgroundColor = rgbColor(red: 254, green: 233, blue: 225)
-        
         emailTextField.layer.cornerRadius = 10
         emailTextField.clipsToBounds = true
-        emailTextField.backgroundColor = backgroundColor
+        emailTextField.backgroundColor = UIColor.CarOWash.mistyRose
         
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.clipsToBounds = true
-        passwordTextField.backgroundColor = backgroundColor
+        passwordTextField.backgroundColor = UIColor.CarOWash.mistyRose
 
         
     }
     
     func setupLabels(){
-        let fontColor = rgbColor(red: 254, green: 233, blue: 225)
-        emailLabel.textColor = fontColor
-        passwordLabel.textColor = fontColor
+        emailLabel.textColor = UIColor.CarOWash.mistyRose
+        passwordLabel.textColor = UIColor.CarOWash.mistyRose
     }
 }
 extension UITextField {
@@ -88,3 +77,4 @@ func setIcon(_ image: UIImage) {
    leftViewMode = .always
 }
 }
+
