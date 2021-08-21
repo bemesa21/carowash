@@ -18,5 +18,5 @@ extension UIColor {
     static var mediumTurquose: UIColor { return UIColor(red: 85/255, green: 221/255, blue: 224/255, alpha: 1) }
     static var unbleachedSilk: UIColor { return UIColor(red: 250/255, green: 212/255, blue: 192/255, alpha: 1) }
   }
-    
+
 }
