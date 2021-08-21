@@ -29,9 +29,16 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-gv-9oJ">
                                 <rect key="frame" x="37" y="443.5" width="340" height="34"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSV-bC-4vm">
+                                <rect key="frame" x="37" y="507.5" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="bu6-bA-aPR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrH-Sf-bvs">
                                 <rect key="frame" x="37" y="358.5" width="340" height="34"/>
                                 <constraints>
@@ -40,16 +47,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBr-o1-6zc">
+                                <rect key="frame" x="227" y="507.5" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="fzi-Ce-RxU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ggy-gv-9oJ" firstAttribute="leading" secondItem="qr1-xj-CbF" secondAttribute="leading" id="27w-qW-oku"/>
+                            <constraint firstItem="hBr-o1-6zc" firstAttribute="trailing" secondItem="ggy-gv-9oJ" secondAttribute="trailing" id="6Dp-aC-ERB"/>
                             <constraint firstItem="ggy-gv-9oJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="72M-96-9B4"/>
+                            <constraint firstItem="CSV-bC-4vm" firstAttribute="leading" secondItem="ggy-gv-9oJ" secondAttribute="leading" id="7Kt-Qf-uvq"/>
                             <constraint firstItem="ggy-gv-9oJ" firstAttribute="width" secondItem="jrH-Sf-bvs" secondAttribute="width" id="9FF-VE-IiO"/>
                             <constraint firstItem="SZw-3R-Tuo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="JpW-hu-gzM"/>
                             <constraint firstItem="SZw-3R-Tuo" firstAttribute="leading" secondItem="jrH-Sf-bvs" secondAttribute="leading" id="NWl-qZ-EuK"/>
+                            <constraint firstItem="hBr-o1-6zc" firstAttribute="top" secondItem="ggy-gv-9oJ" secondAttribute="bottom" constant="30" id="PWb-8f-Tqp"/>
                             <constraint firstItem="jrH-Sf-bvs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZjM-rJ-cjV"/>
+                            <constraint firstItem="CSV-bC-4vm" firstAttribute="top" secondItem="ggy-gv-9oJ" secondAttribute="bottom" constant="30" id="gt7-Vw-fJl"/>
                             <constraint firstItem="qr1-xj-CbF" firstAttribute="top" secondItem="jrH-Sf-bvs" secondAttribute="bottom" constant="30" id="olB-8b-91x"/>
                             <constraint firstItem="jrH-Sf-bvs" firstAttribute="top" secondItem="SZw-3R-Tuo" secondAttribute="bottom" id="orn-lQ-rVD"/>
                             <constraint firstItem="ggy-gv-9oJ" firstAttribute="top" secondItem="qr1-xj-CbF" secondAttribute="bottom" id="qPA-eT-UMk"/>
@@ -58,8 +76,10 @@
                     <connections>
                         <outlet property="emailLabel" destination="SZw-3R-Tuo" id="0Y8-qh-IdB"/>
                         <outlet property="emailTextField" destination="jrH-Sf-bvs" id="K0D-h6-s55"/>
+                        <outlet property="forgotPasswordButton" destination="hBr-o1-6zc" id="5E6-ca-h0w"/>
                         <outlet property="passwordLabel" destination="qr1-xj-CbF" id="iZ0-y1-ujU"/>
                         <outlet property="passwordTextField" destination="ggy-gv-9oJ" id="LK3-Lr-u69"/>
+                        <outlet property="signInButton" destination="CSV-bC-4vm" id="Rqo-CJ-j2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

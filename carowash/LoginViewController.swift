@@ -25,11 +25,17 @@ class LoginViewController: UIViewController {
             passwordTextField.setIcon(UIImage(named: "icon-password")!)
         }
      }
+    
+    @IBOutlet weak var signInButton: UIButton!
+    
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayer()
         setupTextFields()
         setupLabels()
+        setupButtons()
     }
 
     func setUpLayer() {
@@ -52,7 +58,6 @@ class LoginViewController: UIViewController {
         emailTextField.layer.cornerRadius = 10
         emailTextField.clipsToBounds = true
         emailTextField.backgroundColor = UIColor.CarOWash.mistyRose
-
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.clipsToBounds = true
         passwordTextField.backgroundColor = UIColor.CarOWash.mistyRose
@@ -62,6 +67,19 @@ class LoginViewController: UIViewController {
     func setupLabels() {
         emailLabel.textColor = UIColor.CarOWash.mistyRose
         passwordLabel.textColor = UIColor.CarOWash.mistyRose
+    }
+    
+    func setupButtons() {
+        signInButton.backgroundColor = UIColor.CarOWash.unbleachedSilk
+        signInButton.layer.cornerRadius = 10
+        signInButton.clipsToBounds = true
+        signInButton.setTitleColor(UIColor.CarOWash.starComandBlue, for: .normal)
+        signInButton.setTitle("Login", for: .normal)
+        
+        forgotPasswordButton.backgroundColor = nil
+        forgotPasswordButton.setTitleColor(UIColor.CarOWash.mistyRose, for: .normal)
+        forgotPasswordButton.setTitle("Forgot password?", for: .normal)
+        
     }
 }
 extension UITextField {
