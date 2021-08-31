@@ -6,6 +6,7 @@ target 'carowash' do
   use_frameworks!
   pod 'SwiftLint'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   # Pods for carowash
 
   target 'carowashTests' do

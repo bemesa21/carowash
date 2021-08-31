@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let signupPage = loginStoryBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         signupPage.modalPresentationStyle = .fullScreen
-        self.present(signupPage, animated:true, completion:nil)
+        self.present(signupPage, animated: true, completion: nil)
     }
     func setUpLayer() {
 

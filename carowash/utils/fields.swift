@@ -18,7 +18,7 @@ extension UITextField {
        leftView = iconContainerView
        leftViewMode = .always
     }
-    
+
     func applyStyle() {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true

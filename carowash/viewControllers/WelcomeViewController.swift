@@ -14,15 +14,13 @@ class WelcomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func welcomeBack(_ sender: Any) {
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let loginPage = loginStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         loginPage.modalPresentationStyle = .fullScreen
-        self.present(loginPage, animated:true, completion:nil)
+        self.present(loginPage, animated: true, completion: nil)
 
-    
     }
     /*
     // MARK: - Navigation

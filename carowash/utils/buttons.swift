@@ -14,10 +14,10 @@ extension UIButton {
         self.clipsToBounds = true
         self.setTitleColor(UIColor.CarOWash.starComandBlue, for: .normal)
     }
-    
-    func simple(){
+
+    func simple() {
         self.backgroundColor = nil
         self.setTitleColor(UIColor.CarOWash.mistyRose, for: .normal)
     }
-    
+
 }

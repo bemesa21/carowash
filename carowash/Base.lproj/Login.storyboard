@@ -149,6 +149,9 @@
                                     <constraint firstAttribute="width" constant="320" id="XUk-aB-Y1r"/>
                                 </constraints>
                                 <state key="normal" title="Sign-up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="kIA-JJ-rbA" eventType="touchUpInside" id="FW6-4r-oaz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acb-ua-Oli">
                                 <rect key="frame" x="84.5" y="802" width="245" height="30"/>
