@@ -5,7 +5,7 @@ target 'carowash' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'SwiftLint'
-
+  pod 'Firebase/Auth'
   # Pods for carowash
 
   target 'carowashTests' do
