@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
+		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
+		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
 		92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1526CF47BE001D068B /* AppDelegate.swift */; };
 		92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1726CF47BE001D068B /* SceneDelegate.swift */; };
 		92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* LoginViewController.swift */; };
@@ -47,6 +50,9 @@
 		0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.release.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
+		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		92FB3F1226CF47BE001D068B /* carowash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carowash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				92FB3F2126CF47BF001D068B /* Assets.xcassets */,
 				92FB3F2326CF47BF001D068B /* LaunchScreen.storyboard */,
 				92FB3F2626CF47BF001D068B /* Info.plist */,
+				92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */,
 				92FB3F1E26CF47BE001D068B /* carowash.xcdatamodeld */,
 				92FB3FB426D0DC63001D068B /* Main.storyboard */,
 			);
@@ -185,6 +192,8 @@
 			children = (
 				92FB3FB926D0DCAE001D068B /* HomeViewController.swift */,
 				92FB3F1926CF47BE001D068B /* LoginViewController.swift */,
+				92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */,
+				92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -210,6 +219,7 @@
 				92FB3F0E26CF47BE001D068B /* Sources */,
 				92FB3F0F26CF47BE001D068B /* Frameworks */,
 				92FB3F1026CF47BE001D068B /* Resources */,
+				AF023B01B5EBD39F9BD3197B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +257,7 @@
 				92FB3F3226CF47BF001D068B /* Sources */,
 				92FB3F3326CF47BF001D068B /* Frameworks */,
 				92FB3F3426CF47BF001D068B /* Resources */,
+				C28A19F956EA4EBA0BF2293F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +318,7 @@
 			files = (
 				92FB3F2526CF47BF001D068B /* LaunchScreen.storyboard in Resources */,
 				92FB3F2226CF47BF001D068B /* Assets.xcassets in Resources */,
+				92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */,
 				92FB3F1D26CF47BE001D068B /* Login.storyboard in Resources */,
 				92FB3FB526D0DC63001D068B /* Main.storyboard in Resources */,
 			);
@@ -349,6 +361,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF023B01B5EBD39F9BD3197B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carowash/Pods-carowash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carowash/Pods-carowash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carowash/Pods-carowash-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB2C6229820C78D010D44252 /* [CP] Check Pods Manifest.lock */ = {
@@ -395,6 +424,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C28A19F956EA4EBA0BF2293F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carowash-carowashUITests/Pods-carowash-carowashUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -402,8 +448,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */,
 				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				92FB3F6F26D0BB70001D068B /* colors.swift in Sources */,
+				92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */,
 				92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */,
 				92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */,
 				92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */,
@@ -591,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bemesa.carowash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carowash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -610,7 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bemesa.carowash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carowash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
