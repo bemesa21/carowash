@@ -63,32 +63,20 @@ class LoginViewController: UIViewController {
     }
 
     func setupTextFields() {
-        emailTextField.layer.cornerRadius = 10
-        emailTextField.clipsToBounds = true
-        emailTextField.backgroundColor = UIColor.CarOWash.mistyRose
-        passwordTextField.layer.cornerRadius = 10
-        passwordTextField.clipsToBounds = true
-        passwordTextField.backgroundColor = UIColor.CarOWash.mistyRose
-
+        emailTextField.applyStyle()
+        passwordTextField.applyStyle()
     }
 
     func setupLabels() {
-        emailLabel.textColor = UIColor.CarOWash.mistyRose
-        passwordLabel.textColor = UIColor.CarOWash.mistyRose
-        tittleLabel.textColor = UIColor.CarOWash.mistyRose
+        emailLabel.setTextColor()
+        passwordLabel.setTextColor()
+        tittleLabel.setTextColor()
     }
 
     func setupButtons() {
-        signInButton.backgroundColor = UIColor.CarOWash.unbleachedSilk
-        signInButton.layer.cornerRadius = 10
-        signInButton.clipsToBounds = true
-        signInButton.setTitleColor(UIColor.CarOWash.starComandBlue, for: .normal)
-
-        forgotPasswordButton.backgroundColor = nil
-        forgotPasswordButton.setTitleColor(UIColor.CarOWash.mistyRose, for: .normal)
-
-        signupButton.backgroundColor = nil
-        signupButton.setTitleColor(UIColor.CarOWash.mistyRose, for: .normal)
+        signInButton.colorful()
+        forgotPasswordButton.simple()
+        signupButton.simple()
 
     }
 }

@@ -10,6 +10,8 @@
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
+		92CC85B926DDDBE800BE71F5 /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B826DDDBE800BE71F5 /* buttons.swift */; };
+		92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85BD26DDDCED00BE71F5 /* labels.swift */; };
 		92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1526CF47BE001D068B /* AppDelegate.swift */; };
 		92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1726CF47BE001D068B /* SceneDelegate.swift */; };
 		92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* LoginViewController.swift */; };
@@ -53,6 +55,8 @@
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		92CC85B826DDDBE800BE71F5 /* buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
+		92CC85BD26DDDCED00BE71F5 /* labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = labels.swift; sourceTree = "<group>"; };
 		92FB3F1226CF47BE001D068B /* carowash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carowash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			children = (
 				92FB3F6E26D0BB70001D068B /* colors.swift */,
 				92FB3F7B26D0CDD3001D068B /* fields.swift */,
+				92CC85B826DDDBE800BE71F5 /* buttons.swift */,
+				92CC85BD26DDDCED00BE71F5 /* labels.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */,
+				92CC85B926DDDBE800BE71F5 /* buttons.swift in Sources */,
 				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				92FB3F6F26D0BB70001D068B /* colors.swift in Sources */,
 				92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */,
@@ -456,6 +463,7 @@
 				92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */,
 				92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */,
 				92FB3FBA26D0DCAE001D068B /* HomeViewController.swift in Sources */,
+				92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */,
 				92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

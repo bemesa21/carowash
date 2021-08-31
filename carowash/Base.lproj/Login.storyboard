@@ -204,6 +204,17 @@
                             <constraint firstItem="Acb-ua-Oli" firstAttribute="centerX" secondItem="jbY-ll-91h" secondAttribute="centerX" id="vDO-pU-3bK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="NyP-o5-VUw" id="3fZ-fW-ZX6"/>
+                        <outlet property="emailTextField" destination="4fG-gs-ZN4" id="8eu-ea-ZEH"/>
+                        <outlet property="loginButton" destination="Acb-ua-Oli" id="AX2-Ud-w5L"/>
+                        <outlet property="nameLabel" destination="FZq-wa-CMq" id="5xo-4D-V3P"/>
+                        <outlet property="nameTextField" destination="PCy-qn-bQq" id="bRM-QX-ysJ"/>
+                        <outlet property="passwordLabel" destination="31h-Pm-PB4" id="OxT-CD-5WL"/>
+                        <outlet property="passwordTextField" destination="WUa-uV-GJn" id="kwZ-kR-zk2"/>
+                        <outlet property="signUpButton" destination="2fK-dA-QLV" id="JXn-WF-BFh"/>
+                        <outlet property="tittleLabel" destination="1Tu-1e-tWu" id="iL7-cx-O9u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1c-kH-ymH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

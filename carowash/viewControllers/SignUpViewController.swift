@@ -9,10 +9,22 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var tittleLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpLayer()
+        setupTextFields()
+        setupLabels()
+        setupButtons()
     }
     
 
@@ -22,14 +34,39 @@ class SignUpViewController: UIViewController {
         loginPage.modalPresentationStyle = .fullScreen
         self.present(loginPage, animated:true, completion:nil)
     }
-    /*
-    // MARK: - Navigation
+   
+    func setUpLayer() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       let gradientLayer = CAGradientLayer()
+       gradientLayer.frame = view.bounds
+
+       gradientLayer.colors = [
+        UIColor.CarOWash.starComandBlue.cgColor,
+        UIColor.CarOWash.aquamarine.cgColor
+      ]
+
+       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+       gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    */
+    
+    func setupTextFields() {
+        emailTextField.applyStyle()
+        passwordTextField.applyStyle()
+        nameTextField.applyStyle()
+    }
+
+    func setupLabels(){
+        nameLabel.setTextColor()
+        passwordLabel.setTextColor()
+        emailLabel.setTextColor()
+        tittleLabel.setTextColor()
+    }
+    
+    func setupButtons(){
+        signUpButton.colorful()
+        loginButton.simple()
+    }
 
 }
