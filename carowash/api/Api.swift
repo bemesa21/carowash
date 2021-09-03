@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Api{
+struct Api {
     static var User = UserApi()
 }

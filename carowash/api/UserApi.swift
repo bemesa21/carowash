@@ -9,10 +9,13 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class UserApi{
-    func signUp(withUsername username: String, email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        Auth.auth().createUser(withEmail: email, password: password) {
-            (authDataResult, error) in
+class UserApi {
+    func signUp(withUsername username: String,
+                email: String,
+                password: String,
+                onSuccess: @escaping() -> Void,
+                onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) {(authDataResult, error) in
             if error != nil {
                 onError(error!.localizedDescription)
                 return
@@ -26,20 +29,22 @@ class UserApi{
                     "status": "enabled"
                 ]
                 Database.database().reference().child("users")
-                    .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {
-                        (error, _) in
+                    .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {(error, _) in
                         if error == nil {
                             onSuccess()
-                        }else{
+                        } else {
                             onError(error!.localizedDescription)
                         }
                     })
             }
         }
     }
-    
-    func logIn(withEmail email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in
+
+    func logIn(withEmail email: String,
+               password: String,
+               onSuccess: @escaping() -> Void,
+               onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if error != nil {
                 onError(error!.localizedDescription)
                 return
