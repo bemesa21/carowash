@@ -37,32 +37,14 @@ class SignUpViewController: UIViewController {
         self.present(loginPage, animated: true, completion: nil)
     }
 
-    @IBAction func signUp(_ sender: Any) {
-        self.validateFields()
+    @IBAction func signUpTapped(_ sender: Any) {
+        if !self.validateFields(){return}
+        self.signUp()
+    }
+    
+    func signUp() {
+        Api.User.signUp(withUsername: self.nameTextField.text!, email: self.emailTextField.text!, password: self.passwordTextField.text!, onSuccess: {print("Done")}, onError:  {(errorMessage) in  ProgressHUD.showError(errorMessage)})
         
-        Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) {
-            (authDataResult, error) in
-            if error != nil {
-                ProgressHUD.showError(error?.localizedDescription)
-                return
-            }
-            if let authData = authDataResult {
-                let dict: [String: Any] = [
-                    "uid": authData.user.uid,
-                    "email": authData.user.email,
-                    "name": self.nameTextField.text!,
-                    "profileImageUrl": "",
-                    "status": "enabled"
-                ]
-                Database.database().reference().child("users")
-                    .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {
-                        (error, _) in
-                        if error == nil {
-                            ProgressHUD.showError(error?.localizedDescription)
-                        }
-                    })
-            }
-        }
     }
 
     func setUpLayer() {
@@ -98,22 +80,23 @@ class SignUpViewController: UIViewController {
         loginButton.simple()
     }
     
-    func validateFields(){
+    func validateFields() -> Bool{
         guard let name = self.nameTextField.text, !name.isEmpty else{
             ProgressHUD.showError("Please enter your name")
-            return
+            return false
         }
         
         guard let email = self.emailTextField.text, !email.isEmpty else{
             ProgressHUD.showError("Please enter a valid email")
-            return
+            return false
         }
         
         guard let password = self.passwordTextField.text, !password.isEmpty else{
             ProgressHUD.showError("Please enter you new password")
-            return
+            return false
         }
         
+        return true
     }
 
 }
