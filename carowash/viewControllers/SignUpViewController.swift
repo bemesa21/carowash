@@ -38,12 +38,15 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
-        if !self.validateFields(){return}
+        if !self.validateFields(){ return }
         self.signUp()
     }
     
     func signUp() {
-        Api.User.signUp(withUsername: self.nameTextField.text!, email: self.emailTextField.text!, password: self.passwordTextField.text!, onSuccess: {print("Done")}, onError:  {(errorMessage) in  ProgressHUD.showError(errorMessage)})
+        ProgressHUD.show()
+        Api.User.signUp(withUsername: self.nameTextField.text!, email: self.emailTextField.text!, password: self.passwordTextField.text!,
+                        onSuccess: {ProgressHUD.dismiss()},
+                        onError:  {(errorMessage) in  ProgressHUD.showError(errorMessage)})
         
     }
 

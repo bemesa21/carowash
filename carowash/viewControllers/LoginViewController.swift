@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -46,6 +47,29 @@ class LoginViewController: UIViewController {
         signupPage.modalPresentationStyle = .fullScreen
         self.present(signupPage, animated: true, completion: nil)
     }
+    
+    @IBAction func logInTapped(_ sender: Any) {
+        if !self.validateFields(){ return }
+        self.logIn {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            homePage.modalPresentationStyle = .fullScreen
+            self.present(homePage, animated: true, completion: nil)
+        } onError: { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
+    }
+    
+    func logIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        ProgressHUD.show()
+        Api.User.logIn (withEmail: self.emailTextField.text!, password: self.passwordTextField.text!,
+                        onSuccess: {
+                            ProgressHUD.dismiss()
+                            onSuccess()
+                            
+                        },
+                        onError:  {(errorMessage) in  onError(errorMessage)})
+    }
     func setUpLayer() {
 
        let gradientLayer = CAGradientLayer()
@@ -78,5 +102,19 @@ class LoginViewController: UIViewController {
         forgotPasswordButton.simple()
         signupButton.simple()
 
+    }
+    
+    func validateFields() -> Bool{
+        guard let email = self.emailTextField.text, !email.isEmpty else{
+            ProgressHUD.showError("Please enter a valid email")
+            return false
+        }
+        
+        guard let password = self.passwordTextField.text, !password.isEmpty else{
+            ProgressHUD.showError("Please enter you new password")
+            return false
+        }
+        
+        return true
     }
 }
