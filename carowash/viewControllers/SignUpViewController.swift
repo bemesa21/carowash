@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import ProgressHUD
+
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -36,35 +38,31 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUp(_ sender: Any) {
-        if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) {
-                (authDataResult, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
-                }
-                if let authData = authDataResult {
-                    let dict: [String: Any] = [
-                        "uid": authData.user.uid,
-                        "email": authData.user.email,
-                        "name": name,
-                        "profileImageUrl": "",
-                        "status": "enabled"
-                    ]
-                    Database.database().reference().child("users")
-                        .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {
-                            (error, _) in
-                            if error == nil {
-                                print("Done")
-                            }
-                        })
-                }
+        self.validateFields()
+        
+        Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) {
+            (authDataResult, error) in
+            if error != nil {
+                ProgressHUD.showError(error?.localizedDescription)
+                return
             }
-          } else {
-            print("empty text fields")
-            return
-          }
-
+            if let authData = authDataResult {
+                let dict: [String: Any] = [
+                    "uid": authData.user.uid,
+                    "email": authData.user.email,
+                    "name": self.nameTextField.text!,
+                    "profileImageUrl": "",
+                    "status": "enabled"
+                ]
+                Database.database().reference().child("users")
+                    .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {
+                        (error, _) in
+                        if error == nil {
+                            ProgressHUD.showError(error?.localizedDescription)
+                        }
+                    })
+            }
+        }
     }
 
     func setUpLayer() {
@@ -98,6 +96,24 @@ class SignUpViewController: UIViewController {
     func setupButtons() {
         signUpButton.colorful()
         loginButton.simple()
+    }
+    
+    func validateFields(){
+        guard let name = self.nameTextField.text, !name.isEmpty else{
+            ProgressHUD.showError("Please enter your name")
+            return
+        }
+        
+        guard let email = self.emailTextField.text, !email.isEmpty else{
+            ProgressHUD.showError("Please enter a valid email")
+            return
+        }
+        
+        guard let password = self.passwordTextField.text, !password.isEmpty else{
+            ProgressHUD.showError("Please enter you new password")
+            return
+        }
+        
     }
 
 }

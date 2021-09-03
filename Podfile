@@ -7,6 +7,7 @@ target 'carowash' do
   pod 'SwiftLint'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'ProgressHUD'
   # Pods for carowash
 
   target 'carowashTests' do
