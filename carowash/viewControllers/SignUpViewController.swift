@@ -12,19 +12,19 @@ import ProgressHUD
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var nameTextField: UITextField!{
+    @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.tintColor = UIColor.CarOWash.blueNeon
             nameTextField.setIcon(UIImage(named: "icon-user")!)
         }
     }
-    @IBOutlet weak var emailTextField: UITextField!{
+    @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             emailTextField.tintColor = UIColor.CarOWash.blueNeon
             emailTextField.setIcon(UIImage(named: "icon-email")!)
         }
     }
-    @IBOutlet weak var passwordTextField: UITextField!{
+    @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.tintColor = UIColor.CarOWash.blueNeon
             passwordTextField.setIcon(UIImage(named: "icon-password")!)
