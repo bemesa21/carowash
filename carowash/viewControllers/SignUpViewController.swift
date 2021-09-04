@@ -1,38 +1,42 @@
 //
-//  ViewController.swift
+//  SignUpViewController.swift
 //  carowash
 //
-//  Created by Berenice Medel on 19/08/21.
+//  Created by Berenice Medel on 30/08/21.
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 import ProgressHUD
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var tittleLabel: UILabel!
-
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.tintColor = UIColor.CarOWash.blueNeon
+            nameTextField.setIcon(UIImage(named: "icon-user")!)
+        }
+    }
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             emailTextField.tintColor = UIColor.CarOWash.blueNeon
             emailTextField.setIcon(UIImage(named: "icon-email")!)
         }
-     }
-
+    }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.tintColor = UIColor.CarOWash.blueNeon
             passwordTextField.setIcon(UIImage(named: "icon-password")!)
         }
-     }
+    }
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var tittleLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
 
-    @IBOutlet weak var signInButton: UIButton!
-
-    @IBOutlet weak var forgotPasswordButton: UIButton!
-
-    @IBOutlet weak var signupButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayer()
@@ -41,39 +45,30 @@ class LoginViewController: UIViewController {
         setupButtons()
     }
 
-    @IBAction func signUp(_ sender: Any) {
+    @IBAction func logIn(_ sender: Any) {
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let signupPage = loginStoryBoard.instantiateViewController(withIdentifier: "SignUpViewController") as?
-            SignUpViewController
-        signupPage!.modalPresentationStyle = .fullScreen
-        self.present(signupPage!, animated: true, completion: nil)
+        let loginPage = loginStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as?
+            LoginViewController
+        loginPage!.modalPresentationStyle = .fullScreen
+        self.present(loginPage!, animated: true, completion: nil)
     }
 
-    @IBAction func logInTapped(_ sender: Any) {
+    @IBAction func signUpTapped(_ sender: Any) {
         if !self.validateFields() { return }
-        self.logIn {
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as?
-                HomeViewController
-            homePage!.modalPresentationStyle = .fullScreen
-            self.present(homePage!, animated: true, completion: nil)
-        } onError: { (errorMessage) in
-            ProgressHUD.showError(errorMessage)
-        }
+        self.signUp()
     }
 
-    func logIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+    func signUp() {
         ProgressHUD.show()
-        Api.User.logIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!,
-                        onSuccess: {
-                            ProgressHUD.dismiss()
-                            onSuccess()
+        Api.User.signUp(withUsername: self.nameTextField.text!,
+                        email: self.emailTextField.text!,
+                        password: self.passwordTextField.text!,
+                        onSuccess: {ProgressHUD.dismiss()},
+                        onError: {(errorMessage) in  ProgressHUD.showError(errorMessage)})
 
-                        },
-                        onError: {(errorMessage) in  onError(errorMessage)})
     }
-    func setUpLayer() {
 
+    func setUpLayer() {
        let gradientLayer = CAGradientLayer()
        gradientLayer.frame = view.bounds
 
@@ -91,22 +86,27 @@ class LoginViewController: UIViewController {
     func setupTextFields() {
         emailTextField.applyStyle()
         passwordTextField.applyStyle()
+        nameTextField.applyStyle()
     }
 
     func setupLabels() {
-        emailLabel.setTextColor()
+        nameLabel.setTextColor()
         passwordLabel.setTextColor()
+        emailLabel.setTextColor()
         tittleLabel.setTextColor()
     }
 
     func setupButtons() {
-        signInButton.colorful()
-        forgotPasswordButton.simple()
-        signupButton.simple()
-
+        signUpButton.colorful()
+        loginButton.simple()
     }
 
     func validateFields() -> Bool {
+        guard let name = self.nameTextField.text, !name.isEmpty else {
+            ProgressHUD.showError("Please enter your name")
+            return false
+        }
+
         guard let email = self.emailTextField.text, !email.isEmpty else {
             ProgressHUD.showError("Please enter a valid email")
             return false
@@ -119,4 +119,5 @@ class LoginViewController: UIViewController {
 
         return true
     }
+
 }
