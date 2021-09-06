@@ -52,11 +52,12 @@ class LoginViewController: UIViewController {
     @IBAction func logInTapped(_ sender: Any) {
         if !self.validateFields() { return }
         self.logIn {
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as?
-                HomeViewController
-            homePage!.modalPresentationStyle = .fullScreen
-            self.present(homePage!, animated: true, completion: nil)
+//            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarViewController") as?
+//                TabBarViewController
+            let mapPage = TabBarViewController()
+            mapPage.modalPresentationStyle = .fullScreen
+            self.present(mapPage, animated: true, completion: nil)
         } onError: { (errorMessage) in
             ProgressHUD.showError(errorMessage)
         }
