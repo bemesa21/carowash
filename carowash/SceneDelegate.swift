@@ -21,11 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // (see `application:configurationForConnectingSceneSession` instead).
         guard let some = (scene as? UIWindowScene) else { return }
                // it depends if the user is logged, for now just fake true
-        let isLogged = false
+        let isLogged = true
         if isLogged {
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
-                as? HomeViewController
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarViewController")
+                as? TabBarViewController
             self.window?.rootViewController = homePage
         } else {
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
