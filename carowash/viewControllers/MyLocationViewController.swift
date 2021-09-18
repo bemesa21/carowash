@@ -13,6 +13,8 @@ class MyLocationViewController: UIViewController {
 
     let locationManager = CLLocationManager()
     let mapView = MKMapView()
+    let mySearchBar = LocationBarView()
+    let locationInputView = LocationInputView()
     var isCentered = false
 
     override func viewDidLoad() {
@@ -87,11 +89,31 @@ class MyLocationViewController: UIViewController {
     }
 
     func setUpSearchBar() {
-        let mySearchBar = UISearchBar()
-        mySearchBar.frame = CGRect(x: 0, y: view.frame.size.height - 100, width: view.frame.size.width, height: 50)
-        mySearchBar.showsCancelButton = true
-        mySearchBar.placeholder = "Ingresa tu dirección"
-        self.view.addSubview(mySearchBar)
+        view.addSubview(mySearchBar)
+        mySearchBar.centerX(inView: view)
+        mySearchBar.setDimensions(height: 50, width: view.frame.width - 64)
+        mySearchBar.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        mySearchBar.alpha = 0
+        mySearchBar.delegate = self
+
+        UIView.animate(withDuration: 2) {
+            self.mySearchBar.alpha = 1
+        }
+    }
+
+    func configureInputView() {
+        locationInputView.delegate = self
+        view.addSubview(locationInputView)
+        locationInputView.anchor(top: view.topAnchor, left: view.leftAnchor,
+                                 right: view.rightAnchor, height: 200)
+        locationInputView.alpha = 0
+
+        UIView.animate(withDuration: 0.5) {
+            self.locationInputView.alpha = 1
+        } completion: { _ in
+            print("present table view")
+        }
+
     }
 }
 
@@ -136,5 +158,24 @@ extension MyLocationViewController: MKMapViewDelegate {
         self.mapView.removeOverlays(overl)
         print(overlay)
         return MKOverlayRenderer(overlay: overlay)
+    }
+}
+
+extension MyLocationViewController: LocationBarViewDelegate {
+    func presentBarView() {
+        mySearchBar.alpha = 0
+        configureInputView()
+    }
+}
+
+extension MyLocationViewController: LocationInputViewDelegate {
+    func dismissLocationInputView() {
+        UIView.animate(withDuration: 0.3) {
+            self.locationInputView.alpha = 0
+        } completion: { (_) in
+            UIView.animate(withDuration: 0.3) {
+                self.mySearchBar.alpha = 1
+            }
+        }
     }
 }
