@@ -26,11 +26,18 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hvc.title = "Home"
+                
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingsController = mainStoryBoard.instantiateViewController(withIdentifier: "SettingsNavigationViewController") as! UINavigationController
+        settingsController.title = "Account"
+        /*settingsController.navigationBar.barTintColor = UIColor.CarOWash.blueNeon
+        
+        settingsController.navigationBar.backgroundColor = UIColor.CarOWash.blueNeon*/
+        
+	hvc.title = "Home"
         cvc.title = "Cars"
-        pvc.title = "Profile"
 
-        self.setViewControllers([hvc, cvc, pvc], animated: false)
+        self.setViewControllers([hvc, cvc, settingsController], animated: false)
 
         guard let items = self.tabBar.items else { return }
         let images = ["house.fill", "car.2.fill", "person.crop.circle.fill"]

@@ -11,9 +11,9 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Profile"
         // Do any additional setup after loading the view.
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor.CarOWash.seaShell
     }
 
     /*
