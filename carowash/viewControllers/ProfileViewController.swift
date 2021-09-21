@@ -17,13 +17,8 @@ class ProfileViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         configureImagePicker()
+        setupAvatar()
     }
 
     // MARK: - Table view data source
@@ -61,6 +56,17 @@ class ProfileViewController: UITableViewController {
         self.present(picker, animated: true, completion: nil)
     }
 
+    
+    func setupAvatar(){
+        self.profileImage.layer.cornerRadius = 40
+        self.profileImage.clipsToBounds = true
+        
+        Api.User.downloadProfilePhoto { (data) in
+            self.profileImage.image = UIImage(data: data)
+        } onError: { (error) in
+            print(error)
+        }
+    }
    
     /*
     // MARK: - Navigation
