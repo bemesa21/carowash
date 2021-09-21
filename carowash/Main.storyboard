@@ -127,6 +127,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="V4c-li-mHk"/>
                     <connections>
+                        <outlet property="profileImage" destination="c29-w4-hDl" id="s0L-vA-nbN"/>
                         <segue destination="SLD-3I-3VY" kind="show" identifier="EditProfile" id="h1t-Yq-cql"/>
                     </connections>
                 </tableViewController>

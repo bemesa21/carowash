@@ -32,4 +32,8 @@ class Ref{
     func storageSpecificProfile(uid: String) -> StorageReference{
         return storageProfile.child(uid)
     }
+    
+    func storageFromUrl(url: String) -> StorageReference{
+        return Storage.storage().reference(forURL: url)
+    }
 }

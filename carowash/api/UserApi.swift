@@ -67,4 +67,24 @@ class UserApi {
             onSuccess()
         }
     }
+    
+    func downloadProfilePhoto(onSuccess: @escaping(_ data: Data) -> Void,
+                              onError: @escaping(_ errorMessage: String) -> Void){
+        let defaults = UserDefaults.standard
+        if let currentUser = defaults.dictionary(forKey: "currentUser"){
+            print(currentUser)
+            if let imageUrl = currentUser["profileImageUrl"]! as? String{
+                print(imageUrl)
+                let httpsReference = Ref().storageFromUrl(url: imageUrl)
+                
+                httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                  if error == nil {
+                    onSuccess(data!)
+                  }else{
+                    onError(error!.localizedDescription)
+                  }
+                }
+            }
+        }
+    }
 }
