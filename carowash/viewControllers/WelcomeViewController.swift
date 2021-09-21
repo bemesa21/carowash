@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
+    var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,19 @@ class WelcomeViewController: UIViewController {
         self.present(loginPage!, animated: true, completion: nil)
 
     }
-    /*
-    // MARK: - Navigation
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        
+        if defaults.dictionary(forKey: "currentUser") != nil
+        {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarViewController")
+                as? TabBarViewController
+            homePage!.modalPresentationStyle = .fullScreen
+            self.present(homePage!, animated: true, completion: nil)
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
