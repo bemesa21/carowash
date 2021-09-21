@@ -8,6 +8,7 @@ target 'carowash' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'ProgressHUD'
+  pod 'Firebase/Storage'
   # Pods for carowash
 
   target 'carowashTests' do

@@ -7,8 +7,12 @@
 
 import UIKit
 import FirebaseAuth
-class ProfileViewController: UITableViewController {
+import FirebaseStorage
+import ProgressHUD
 
+class ProfileViewController: UITableViewController {
+    var image: UIImage? = nil
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
@@ -73,13 +77,34 @@ class ProfileViewController: UITableViewController {
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
-            profileImage.image = imageSelected
+            self.image = imageSelected
         }
         
         if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            profileImage.image = imageOriginal
+            self.image = imageOriginal
         }
         
+        self.uploadPhoto()
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadPhoto() {
+        ProgressHUD.show()
+
+        let defaults = UserDefaults.standard
+        if let currentUser = defaults.dictionary(forKey: "currentUser"){
+            guard let imageData = self.image?.jpegData(compressionQuality: 0.4) else{ return}
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            let currentUserUid = currentUser["uid"] as! String
+
+            StorageService.savePhoto(uid: currentUserUid , data: imageData, metadata: metadata) {
+                self.profileImage.image = self.image
+                ProgressHUD.dismiss()
+            } onError: { (errorMessage) in
+                ProgressHUD.showError(errorMessage)
+            }
+
+        }
     }
 }
