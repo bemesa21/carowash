@@ -44,11 +44,26 @@ class UserApi {
                password: String,
                onSuccess: @escaping() -> Void,
                onError: @escaping(_ errorMessage: String) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in
             if error != nil {
                 onError(error!.localizedDescription)
                 return
             }
+            
+            Database.database().reference().child("users/\(authData!.user.uid)").getData { (error, snapshot) in
+                if let error = error {
+                    print("Error getting data \(error)")
+                }
+                else if snapshot.exists() {
+                    let defaults = UserDefaults.standard
+                    defaults.setValue(snapshot.value!, forKey: "currentUser")
+                    print("Got data \(snapshot.value!)")
+                }
+                else {
+                    print("No data available")
+                }
+            }
+            
             onSuccess()
         }
     }
