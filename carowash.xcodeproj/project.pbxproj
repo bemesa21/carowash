@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1445C88C26E3D2D700769390 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C88B26E3D2D700769390 /* MyLocationViewController.swift */; };
 		1445C89126E57DC200769390 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C89026E57DC200769390 /* CarViewController.swift */; };
-		1445C89626E57DD900769390 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C89526E57DD900769390 /* ProfileViewController.swift */; };
 		1445C89E26E57E2F00769390 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C89D26E57E2F00769390 /* HomeViewController.swift */; };
 		1445C8DC26F5A60200769390 /* LocationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8DB26F5A60200769390 /* LocationBarView.swift */; };
 		1445C8F126F5A98300769390 /* FastConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8F026F5A98300769390 /* FastConstraints.swift */; };
@@ -18,6 +17,8 @@
 		1445C90626FD898000769390 /* MapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90526FD898000769390 /* MapExtension.swift */; };
 		1445C90B26FDB69E00769390 /* LocationActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90A26FDB69E00769390 /* LocationActionView.swift */; };
 		1445C91826FE442B00769390 /* ComboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C91726FE442B00769390 /* ComboCell.swift */; };
+		9261CA1626F98EB5001908FB /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA1526F98EB5001908FB /* StorageService.swift */; };
+		9261CA2F26F99CDF001908FB /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA2E26F99CDF001908FB /* Ref.swift */; };
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
@@ -27,6 +28,7 @@
 		92CC85F126E2AA1500BE71F5 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85F026E2AA1500BE71F5 /* UserApi.swift */; };
 		92CC863B26E6F63000BE71F5 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC863A26E6F63000BE71F5 /* SettingsTableViewController.swift */; };
 		92CD956E26F80AF8009E6250 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD956D26F80AF8009E6250 /* IconTableViewCell.swift */; };
+		92CD957E26F83AC3009E6250 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD957D26F83AC3009E6250 /* ProfileViewController.swift */; };
 		92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1526CF47BE001D068B /* AppDelegate.swift */; };
 		92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1726CF47BE001D068B /* SceneDelegate.swift */; };
 		92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB3F1926CF47BE001D068B /* LoginViewController.swift */; };
@@ -67,7 +69,6 @@
 		0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1445C88B26E3D2D700769390 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		1445C89026E57DC200769390 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
-		1445C89526E57DD900769390 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1445C89D26E57E2F00769390 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1445C8DB26F5A60200769390 /* LocationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBarView.swift; sourceTree = "<group>"; };
 		1445C8F026F5A98300769390 /* FastConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastConstraints.swift; sourceTree = "<group>"; };
@@ -78,6 +79,8 @@
 		1445C91726FE442B00769390 /* ComboCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboCell.swift; sourceTree = "<group>"; };
 		2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.release.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
+		9261CA1526F98EB5001908FB /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		9261CA2E26F99CDF001908FB /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		92CC85F026E2AA1500BE71F5 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		92CC863A26E6F63000BE71F5 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		92CD956D26F80AF8009E6250 /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
+		92CD957D26F83AC3009E6250 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		92FB3F1226CF47BE001D068B /* carowash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carowash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FB3F1526CF47BE001D068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FB3F1726CF47BE001D068B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				92CC85E826E2A9EC00BE71F5 /* Api.swift */,
 				92CC85F026E2AA1500BE71F5 /* UserApi.swift */,
+				9261CA1526F98EB5001908FB /* StorageService.swift */,
+				9261CA2E26F99CDF001908FB /* Ref.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -253,7 +259,6 @@
 				92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */,
 				1445C88B26E3D2D700769390 /* MyLocationViewController.swift */,
 				1445C89026E57DC200769390 /* CarViewController.swift */,
-				1445C89526E57DD900769390 /* ProfileViewController.swift */,
 				1445C89D26E57E2F00769390 /* HomeViewController.swift */,
 				1445C8DB26F5A60200769390 /* LocationBarView.swift */,
 				1445C8F526F632D700769390 /* LocationInputView.swift */,
@@ -261,6 +266,7 @@
 				1445C90A26FDB69E00769390 /* LocationActionView.swift */,
 				1445C91726FE442B00769390 /* ComboCell.swift */,
 				92CC863A26E6F63000BE71F5 /* SettingsTableViewController.swift */,
+				92CD957D26F83AC3009E6250 /* ProfileViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -520,11 +526,13 @@
 				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				1445C89E26E57E2F00769390 /* HomeViewController.swift in Sources */,
 				92FB3F6F26D0BB70001D068B /* colors.swift in Sources */,
+				9261CA1626F98EB5001908FB /* StorageService.swift in Sources */,
 				92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */,
 				92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */,
-				1445C89626E57DD900769390 /* ProfileViewController.swift in Sources */,
 				92CC863B26E6F63000BE71F5 /* SettingsTableViewController.swift in Sources */,
+				9261CA2F26F99CDF001908FB /* Ref.swift in Sources */,
 				92CC85E926E2A9EC00BE71F5 /* Api.swift in Sources */,
+				92CD957E26F83AC3009E6250 /* ProfileViewController.swift in Sources */,
 				92FB3F1626CF47BE001D068B /* AppDelegate.swift in Sources */,
 				92CD956E26F80AF8009E6250 /* IconTableViewCell.swift in Sources */,
 				92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */,
