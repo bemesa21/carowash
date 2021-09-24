@@ -16,6 +16,8 @@
 		1445C8F626F632D700769390 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8F526F632D700769390 /* LocationInputView.swift */; };
 		1445C90126FD809000769390 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90026FD809000769390 /* LocationCell.swift */; };
 		1445C90626FD898000769390 /* MapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90526FD898000769390 /* MapExtension.swift */; };
+		1445C90B26FDB69E00769390 /* LocationActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90A26FDB69E00769390 /* LocationActionView.swift */; };
+		1445C91826FE442B00769390 /* ComboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C91726FE442B00769390 /* ComboCell.swift */; };
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
@@ -70,6 +72,8 @@
 		1445C8F526F632D700769390 /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		1445C90026FD809000769390 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		1445C90526FD898000769390 /* MapExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapExtension.swift; sourceTree = "<group>"; };
+		1445C90A26FDB69E00769390 /* LocationActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationActionView.swift; sourceTree = "<group>"; };
+		1445C91726FE442B00769390 /* ComboCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboCell.swift; sourceTree = "<group>"; };
 		2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.release.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -241,6 +245,8 @@
 				1445C8DB26F5A60200769390 /* LocationBarView.swift */,
 				1445C8F526F632D700769390 /* LocationInputView.swift */,
 				1445C90026FD809000769390 /* LocationCell.swift */,
+				1445C90A26FDB69E00769390 /* LocationActionView.swift */,
+				1445C91726FE442B00769390 /* ComboCell.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -508,10 +514,12 @@
 				92FB3F7C26D0CDD3001D068B /* fields.swift in Sources */,
 				1445C8F126F5A98300769390 /* FastConstraints.swift in Sources */,
 				1445C8DC26F5A60200769390 /* LocationBarView.swift in Sources */,
+				1445C90B26FDB69E00769390 /* LocationActionView.swift in Sources */,
 				1445C88C26E3D2D700769390 /* MyLocationViewController.swift in Sources */,
 				1445C8F626F632D700769390 /* LocationInputView.swift in Sources */,
 				1445C89126E57DC200769390 /* CarViewController.swift in Sources */,
 				92FB3FBA26D0DCAE001D068B /* TabBarViewController.swift in Sources */,
+				1445C91826FE442B00769390 /* ComboCell.swift in Sources */,
 				92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */,
 				1445C90126FD809000769390 /* LocationCell.swift in Sources */,
 				92CC85F126E2AA1500BE71F5 /* UserApi.swift in Sources */,
