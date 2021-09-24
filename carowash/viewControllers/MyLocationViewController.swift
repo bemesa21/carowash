@@ -22,21 +22,21 @@ class MyLocationViewController: UIViewController {
     var isCentered = false
     private let tableView = UITableView()
     private var searchResults = [MKPlacemark]()
+    private let locationActionView = LocationActionView()
 
     private final let locationInputViewHeight: CGFloat = 200
+    private final let locationActionViewHeight: CGFloat = 300
 
     private var returnButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "baseline_arrow_back_black_36dp-1").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpLocation()
-        setUpMapView()
-        setUpSearchBar()
+        configureUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,13 @@ class MyLocationViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-    // MARK: - Confugurations
+    // MARK: - Configurations
+
+    func configureUI() {
+        setUpLocation()
+        setUpMapView()
+        setUpSearchBar()
+    }
 
     func setUpLocation() {
         locationManager.delegate = self
@@ -76,6 +82,7 @@ class MyLocationViewController: UIViewController {
     }
 
     func setUpSearchBar() {
+        configureLocationActionView()
         view.addSubview(mySearchBar)
         mySearchBar.centerX(inView: view)
         mySearchBar.setDimensions(height: 50, width: view.frame.width - 64)
@@ -126,6 +133,12 @@ class MyLocationViewController: UIViewController {
         view.addSubview(tableView)
     }
 
+    func configureLocationActionView() {
+        view.addSubview(locationActionView)
+        locationActionView.frame = CGRect(x: 0, y: view.frame.height - 300,
+                                          width: view.frame.width, height: locationActionViewHeight)
+    }
+
     func dismissLocationView(completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: 0.3, animations: {
             self.locationInputView.alpha = 0
@@ -136,9 +149,7 @@ class MyLocationViewController: UIViewController {
 
     // MARK: - Selector
 
-    @objc func actionButtonPressed() {
-        print("Return button pressed")
-
+    @objc func backButtonPressed() {
         mapView.annotations.forEach { (annotation) in
             if let pin = annotation as? MKPointAnnotation {
                 mapView.removeAnnotation(pin)
@@ -149,6 +160,8 @@ class MyLocationViewController: UIViewController {
             self.mySearchBar.alpha = 1
             self.returnButton.isHidden = true
         }
+
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
 
     @objc func addAnnotation(_ gestureRecognizer: UIGestureRecognizer) {
@@ -309,6 +322,11 @@ extension MyLocationViewController: UITableViewDelegate, UITableViewDataSource {
             annotation.coordinate = selectedPlacemark.coordinate
             self.mapView.addAnnotation(annotation)
             self.mapView.selectAnnotation(annotation, animated: true)
+
+            let annotations = self.mapView.annotations.filter({ $0.isKind(of: MKPointAnnotation.self) })
+
+            self.mapView.showAnnotations(annotations, animated: true)
         }
+
     }
 }

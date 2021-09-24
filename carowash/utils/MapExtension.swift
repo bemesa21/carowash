@@ -10,6 +10,7 @@ import MapKit
 
 extension MKPlacemark {
     var address: String? {
+        // swiftlint:disable implicit_getter
         get {
             guard let subThoroughfare = subThoroughfare else { return nil }
             guard let thoroughfare = thoroughfare else { return nil }
@@ -18,6 +19,7 @@ extension MKPlacemark {
 
             return "\(subThoroughfare) \(thoroughfare), \(locality), \(adminArea) "
         }
+        // swiftlint:enable implicit_getter
     }
 }
 
