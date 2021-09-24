@@ -14,6 +14,8 @@
 		1445C8DC26F5A60200769390 /* LocationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8DB26F5A60200769390 /* LocationBarView.swift */; };
 		1445C8F126F5A98300769390 /* FastConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8F026F5A98300769390 /* FastConstraints.swift */; };
 		1445C8F626F632D700769390 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C8F526F632D700769390 /* LocationInputView.swift */; };
+		1445C90126FD809000769390 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90026FD809000769390 /* LocationCell.swift */; };
+		1445C90626FD898000769390 /* MapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C90526FD898000769390 /* MapExtension.swift */; };
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
@@ -66,6 +68,8 @@
 		1445C8DB26F5A60200769390 /* LocationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBarView.swift; sourceTree = "<group>"; };
 		1445C8F026F5A98300769390 /* FastConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastConstraints.swift; sourceTree = "<group>"; };
 		1445C8F526F632D700769390 /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		1445C90026FD809000769390 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		1445C90526FD898000769390 /* MapExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapExtension.swift; sourceTree = "<group>"; };
 		2D521637C3E581808AACE61A /* Pods-carowashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.release.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -218,6 +222,7 @@
 				92CC85B826DDDBE800BE71F5 /* buttons.swift */,
 				92CC85BD26DDDCED00BE71F5 /* labels.swift */,
 				1445C8F026F5A98300769390 /* FastConstraints.swift */,
+				1445C90526FD898000769390 /* MapExtension.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				1445C89D26E57E2F00769390 /* HomeViewController.swift */,
 				1445C8DB26F5A60200769390 /* LocationBarView.swift */,
 				1445C8F526F632D700769390 /* LocationInputView.swift */,
+				1445C90026FD809000769390 /* LocationCell.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -507,7 +513,9 @@
 				1445C89126E57DC200769390 /* CarViewController.swift in Sources */,
 				92FB3FBA26D0DCAE001D068B /* TabBarViewController.swift in Sources */,
 				92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */,
+				1445C90126FD809000769390 /* LocationCell.swift in Sources */,
 				92CC85F126E2AA1500BE71F5 /* UserApi.swift in Sources */,
+				1445C90626FD898000769390 /* MapExtension.swift in Sources */,
 				92FB3F1826CF47BE001D068B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8479HS2GF5;
 				INFOPLIST_FILE = carowash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -705,6 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8479HS2GF5;
 				INFOPLIST_FILE = carowash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

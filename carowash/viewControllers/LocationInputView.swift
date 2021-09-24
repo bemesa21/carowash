@@ -9,6 +9,7 @@ import UIKit
 
 protocol LocationInputViewDelegate: class {
     func dismissLocationInputView()
+    func executeSearch(query: String)
 }
 
 class LocationInputView: UIView {
@@ -22,6 +23,16 @@ class LocationInputView: UIView {
         return button
     }()
 
+    private lazy var locationTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Ingresa tu dirección"
+        textField.backgroundColor = .lightGray
+        textField.returnKeyType = .search
+        textField.font = UIFont.systemFont(ofSize: 14)
+        textField.delegate = self
+        return textField
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -31,6 +42,11 @@ class LocationInputView: UIView {
         addSubview(backButton)
         backButton.anchor(top: topAnchor, left: leftAnchor, paddingTop: 44,
                           paddingLeft: 12, width: 24, height: 25)
+
+        addSubview(locationTextField)
+        locationTextField.anchor(top: backButton.bottomAnchor, left: leftAnchor,
+                                 right: rightAnchor, paddingTop: 20, paddingLeft: 40,
+                                 paddingRight: 40, height: 40)
     }
 
     required init?(coder: NSCoder) {
@@ -39,5 +55,13 @@ class LocationInputView: UIView {
 
     @objc func handleBackTapped() {
         delegate?.dismissLocationInputView()
+    }
+}
+
+extension LocationInputView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let query = textField.text else { return false }
+        delegate?.executeSearch(query: query)
+        return true
     }
 }
