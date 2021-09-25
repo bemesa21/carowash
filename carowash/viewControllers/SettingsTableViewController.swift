@@ -12,6 +12,7 @@ class SettingsTableViewController: UITableViewController {
         SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-profile"),
         SettingsOption(name: "Log out", segueName: "logoutTapped", iconName: "icon-logout")
     ]
+
     var currentUser: User?
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,7 +23,7 @@ class SettingsTableViewController: UITableViewController {
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
         tableView.rowHeight = 80
         self.setupAvatarImage()
-        self.setupLabels()
+        self.setupLabels()   
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +90,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    func setupCurrentUser() {
+    func setupCurrentUser() {    
         let defaults = UserDefaults.standard
         let currentUserId = defaults.string(forKey: "currentUser")
         Api.User.getUser(userId: currentUserId!) { (user) in

@@ -24,7 +24,7 @@
 		9261CA8026FFCD88001908FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA7F26FFCD88001908FB /* User.swift */; };
 		928507712700012300E9FEF9 /* EditableOptsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */; };
 		9285077627000B5800E9FEF9 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285077527000B5800E9FEF9 /* EditViewController.swift */; };
-		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
+        	92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
 		92CC85B926DDDBE800BE71F5 /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B826DDDBE800BE71F5 /* buttons.swift */; };
@@ -89,6 +89,7 @@
 		9261CA1526F98EB5001908FB /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		9261CA2E26F99CDF001908FB /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		9261CA7F26FFCD88001908FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+
 		928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableOptsTableViewCell.swift; sourceTree = "<group>"; };
 		9285077527000B5800E9FEF9 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
