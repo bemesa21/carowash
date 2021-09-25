@@ -29,7 +29,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
 
-        if defaults.dictionary(forKey: "currentUser") != nil {
+        if defaults.string(forKey: "currentUser") != nil {
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarViewController")
                 as? TabBarViewController

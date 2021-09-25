@@ -12,13 +12,17 @@ import ProgressHUD
 
 class ProfileViewController: UITableViewController {
     var image: UIImage?
-
+    var currentUser: User?
     @IBOutlet weak var profileImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureImagePicker()
-        setupAvatar()
+        self.configureImagePicker()
+        self.setupAvatarImage()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupUserProfile()
     }
 
     // MARK: - Table view data source
@@ -54,13 +58,29 @@ class ProfileViewController: UITableViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
-
-    func setupAvatar() {
+    
+    func setupAvatarImage(){
+        self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
+    }
 
-        Api.User.downloadProfilePhoto { (data) in
-            self.profileImage.image = UIImage(data: data)
+    func downloadAvatar() {
+        Api.User.downloadProfilePhoto(imageUrl: self.currentUser!.profileImageUrl){ (data) in
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data)
+            }
+        } onError: { (error) in
+            print(error)
+        }
+    }
+    
+    func setupUserProfile(){
+        let defaults = UserDefaults.standard
+        let currentUserId = defaults.string(forKey: "currentUser")
+        Api.User.getUser(userId: currentUserId!) { (user) in
+            self.currentUser = user
+            self.downloadAvatar()
         } onError: { (error) in
             print(error)
         }
@@ -95,15 +115,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 
     func uploadPhoto() {
         ProgressHUD.show()
-
-        let defaults = UserDefaults.standard
-        if let currentUser = defaults.dictionary(forKey: "currentUser") {
+        if self.currentUser != nil {
             guard let imageData = self.image?.jpegData(compressionQuality: 0.4) else { return}
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpg"
-            let currentUserUid = currentUser["uid"] as? String
 
-            StorageService.savePhoto(uid: currentUserUid!, data: imageData, metadata: metadata) {
+            StorageService.savePhoto(uid: self.currentUser!.uid, data: imageData, metadata: metadata) {
                 self.profileImage.image = self.image
                 ProgressHUD.dismiss()
             } onError: { (errorMessage) in

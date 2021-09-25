@@ -49,39 +49,42 @@ class UserApi {
                 onError(error!.localizedDescription)
                 return
             }
-
-            Database.database().reference().child("users/\(authData!.user.uid)").getData { (error, snapshot) in
-                if let error = error {
-                    print("Error getting data \(error)")
-                } else if snapshot.exists() {
-                    let defaults = UserDefaults.standard
-                    defaults.setValue(snapshot.value!, forKey: "currentUser")
-                    print("Got data \(snapshot.value!)")
-                } else {
-                    print("No data available")
-                }
-            }
-
+            let defaults = UserDefaults.standard
+            defaults.setValue(authData!.user.uid, forKey: "currentUser")
             onSuccess()
         }
     }
 
-    func downloadProfilePhoto(onSuccess: @escaping(_ data: Data) -> Void,
-                              onError: @escaping(_ errorMessage: String) -> Void) {
-        let defaults = UserDefaults.standard
-        if let currentUser = defaults.dictionary(forKey: "currentUser") {
-            print(currentUser)
-            if let imageUrl = currentUser["profileImageUrl"]! as? String {
-                print(imageUrl)
-                let httpsReference = Ref().storageFromUrl(url: imageUrl)
-
-                httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                  if error == nil {
-                    onSuccess(data!)
-                  } else {
-                    onError(error!.localizedDescription)
-                  }
-                }
+    func downloadProfilePhoto(imageUrl:String, onSuccess: @escaping(_ data: Data) -> Void,
+                              onError: @escaping(_ errorMessage: String) -> Void) {        
+        if imageUrl != "" {
+            let httpsReference = Ref().storageFromUrl(url: imageUrl)
+            httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+              if error == nil {
+                onSuccess(data!)
+              } else {
+                onError(error!.localizedDescription)
+              }
+            }
+        }else{
+            onError("noImageFound")
+        }
+    }
+    
+    func getUser(userId: String, onSuccess: @escaping(_ user: User) -> Void,
+                 onError: @escaping(_ errorMessage: String) -> Void){
+        Database.database().reference().child("users/\(userId)").getData { (error, snapshot) in
+            if let error = error {
+                onError(error.localizedDescription)
+            } else if snapshot.exists() {
+                let dict = snapshot.value as! [String: Any]
+                let name = dict["name"] as? String
+                let uid = dict["uid"] as? String
+                let profileImage = dict["profileImageUrl"] as? String
+                let currentUser = User(name: name!, profileImageUrl: profileImage!, uid: uid!)
+                onSuccess(currentUser)
+            } else {
+                onError("User not found")
             }
         }
     }

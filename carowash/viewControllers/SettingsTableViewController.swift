@@ -12,6 +12,7 @@ class SettingsTableViewController: UITableViewController {
         SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-user"),
         SettingsOption(name: "LogOut", segueName: "logoutTapped", iconName: "icon-user")
     ]
+    var currentUser:User?
 
     @IBOutlet weak var profileImage: UIImageView!
 
@@ -19,11 +20,13 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
         tableView.rowHeight = 80
-        setupAvatar()
+        self.setupAvatarImage()
     }
 
-    // MARK: - Table view data source
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupCurrentUser()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -60,12 +63,29 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    func setupAvatar() {
+    func setupAvatarImage(){
+        self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
-
-        Api.User.downloadProfilePhoto { (data) in
-            self.profileImage.image = UIImage(data: data)
+    }
+    
+    func downloadAvatar() {
+        Api.User.downloadProfilePhoto(imageUrl: self.currentUser!.profileImageUrl){ (data) in
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data)
+            }
+        } onError: { (error) in
+            print(error)
+        }
+    }
+    
+    func setupCurrentUser(){
+        print("on setuo current user")
+        let defaults = UserDefaults.standard
+        let currentUserId = defaults.string(forKey: "currentUser")
+        Api.User.getUser(userId: currentUserId!) { (user) in
+            self.currentUser = user
+            self.downloadAvatar()
         } onError: { (error) in
             print(error)
         }
