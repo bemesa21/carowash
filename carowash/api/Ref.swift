@@ -8,32 +8,32 @@
 import Foundation
 import Firebase
 
-let REF_USER = "users"
-let URL_STORAGE_ROOT = "gs://carowash-b25eb.appspot.com"
-let STORAGE_PROFILE = "profile"
+let refUser = "users"
+let urlStorageRoot = "gs://carowash-b25eb.appspot.com"
+let storageProfileR = "profile"
 
-class Ref{
+class Ref {
     let databaseRoot: DatabaseReference = Database.database().reference()
-    
+
     var databaseUsers: DatabaseReference {
-        return databaseRoot.child(REF_USER)
+        return databaseRoot.child(refUser)
     }
-    
+
     func databaseSpecificUser(uid: String) -> DatabaseReference {
         return databaseUsers.child(uid)
     }
-    
-    let storageRoot = Storage.storage().reference(forURL: URL_STORAGE_ROOT)
-    
-    var storageProfile: StorageReference{
-        return storageRoot.child(STORAGE_PROFILE)
+
+    let storageRoot = Storage.storage().reference(forURL: urlStorageRoot)
+
+    var storageProfile: StorageReference {
+        return storageRoot.child(storageProfileR)
     }
-     
-    func storageSpecificProfile(uid: String) -> StorageReference{
+
+    func storageSpecificProfile(uid: String) -> StorageReference {
         return storageProfile.child(uid)
     }
-    
-    func storageFromUrl(url: String) -> StorageReference{
+
+    func storageFromUrl(url: String) -> StorageReference {
         return Storage.storage().reference(forURL: url)
     }
 }
