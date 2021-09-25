@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1410F45326FF4CD500F6F767 /* ComboText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410F45226FF4CD500F6F767 /* ComboText.swift */; };
+		1410F46326FF997C00F6F767 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410F46226FF997C00F6F767 /* OrderViewController.swift */; };
 		1445C88C26E3D2D700769390 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C88B26E3D2D700769390 /* MyLocationViewController.swift */; };
 		1445C89126E57DC200769390 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C89026E57DC200769390 /* CarViewController.swift */; };
 		1445C89E26E57E2F00769390 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C89D26E57E2F00769390 /* HomeViewController.swift */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		04B5B34721F4DA8EDF484119 /* Pods-carowashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowashTests.debug.xcconfig"; path = "Target Support Files/Pods-carowashTests/Pods-carowashTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E9DAFC577EA531BD8B04B25 /* Pods_carowashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carowashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1410F45226FF4CD500F6F767 /* ComboText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboText.swift; sourceTree = "<group>"; };
+		1410F46226FF997C00F6F767 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		1445C88B26E3D2D700769390 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		1445C89026E57DC200769390 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		1445C89D26E57E2F00769390 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				92CC85BD26DDDCED00BE71F5 /* labels.swift */,
 				1445C8F026F5A98300769390 /* FastConstraints.swift */,
 				1445C90526FD898000769390 /* MapExtension.swift */,
+				1410F45226FF4CD500F6F767 /* ComboText.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				1445C91726FE442B00769390 /* ComboCell.swift */,
 				92CC863A26E6F63000BE71F5 /* SettingsTableViewController.swift */,
 				92CD957D26F83AC3009E6250 /* ProfileViewController.swift */,
+				1410F46226FF997C00F6F767 /* OrderViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 			files = (
 				92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */,
 				92CC85B926DDDBE800BE71F5 /* buttons.swift in Sources */,
+				1410F45326FF4CD500F6F767 /* ComboText.swift in Sources */,
 				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				1445C89E26E57E2F00769390 /* HomeViewController.swift in Sources */,
 				92FB3F6F26D0BB70001D068B /* colors.swift in Sources */,
@@ -539,6 +546,7 @@
 				1445C8F126F5A98300769390 /* FastConstraints.swift in Sources */,
 				1445C8DC26F5A60200769390 /* LocationBarView.swift in Sources */,
 				1445C90B26FDB69E00769390 /* LocationActionView.swift in Sources */,
+				1410F46326FF997C00F6F767 /* OrderViewController.swift in Sources */,
 				1445C88C26E3D2D700769390 /* MyLocationViewController.swift in Sources */,
 				1445C8F626F632D700769390 /* LocationInputView.swift in Sources */,
 				1445C89126E57DC200769390 /* CarViewController.swift in Sources */,

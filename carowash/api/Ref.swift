@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 let refUser = "users"
 let urlStorageRoot = "gs://carowash-b25eb.appspot.com"

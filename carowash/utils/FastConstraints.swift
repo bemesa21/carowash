@@ -75,6 +75,32 @@ extension UIView {
         layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         layer.masksToBounds = false
     }
+
+    func generateGradient(view: UIView, colorOne: UIColor, colorTwo: UIColor) {
+       let gradientLayer = CAGradientLayer()
+       gradientLayer.frame = view.bounds
+
+       gradientLayer.colors = [colorOne, colorTwo]
+
+       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+       gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
+
+extension UIViewController {
+    func generateGradientVC(view: UIView, colorOne: UIColor, colorTwo: UIColor) {
+       let gradientLayer = CAGradientLayer()
+       gradientLayer.frame = view.bounds
+
+       gradientLayer.colors = [colorOne, colorTwo]
+
+       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+       gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
 
 extension UITextField {
