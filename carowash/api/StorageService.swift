@@ -11,9 +11,12 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class StorageService {
-    static func savePhoto(uid: String, data: Data, metadata: StorageMetadata, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+    static func savePhoto(uid: String,
+                          data: Data, metadata: StorageMetadata,
+                          onSuccess: @escaping() -> Void,
+                          onError: @escaping(_ errorMessage: String) -> Void) {
         let storageRef = Ref().storageSpecificProfile(uid: uid)
-        storageRef.putData(data, metadata: metadata) { (storageMetadata, error) in
+        storageRef.putData(data, metadata: metadata) { (_, error) in
             if error != nil {
                 onError(error!.localizedDescription)
                 return
@@ -23,11 +26,11 @@ class StorageService {
                     onError(error!.localizedDescription)
                     return
                 }
-                if let metaImageUrl = url?.absoluteString{
-                    if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest(){
+                if let metaImageUrl = url?.absoluteString {
+                    if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
                         changeRequest.photoURL = url
                         changeRequest.commitChanges { (error) in
-                            if let error = error{
+                            if let error = error {
                                 onError(error.localizedDescription)
                                 return
                             }
@@ -36,10 +39,10 @@ class StorageService {
                     let userInfo: [String: String] = [
                         "profileImageUrl": metaImageUrl
                     ]
-                    Ref().databaseSpecificUser(uid: uid).updateChildValues(userInfo) { (error, reference) in
+                    Ref().databaseSpecificUser(uid: uid).updateChildValues(userInfo) { (error, _) in
                         if error == nil {
                             onSuccess()
-                        }else{
+                        } else {
                             onError(error!.localizedDescription)
                         }
                     }

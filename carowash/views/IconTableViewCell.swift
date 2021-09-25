@@ -10,6 +10,5 @@ import UIKit
 class IconTableViewCell: UITableViewCell {
     @IBOutlet var optionLabel: UILabel!
     @IBOutlet var iconImage: UIImageView!
-    
 
 }

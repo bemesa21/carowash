@@ -49,38 +49,36 @@ class UserApi {
                 onError(error!.localizedDescription)
                 return
             }
-            
+
             Database.database().reference().child("users/\(authData!.user.uid)").getData { (error, snapshot) in
                 if let error = error {
                     print("Error getting data \(error)")
-                }
-                else if snapshot.exists() {
+                } else if snapshot.exists() {
                     let defaults = UserDefaults.standard
                     defaults.setValue(snapshot.value!, forKey: "currentUser")
                     print("Got data \(snapshot.value!)")
-                }
-                else {
+                } else {
                     print("No data available")
                 }
             }
-            
+
             onSuccess()
         }
     }
-    
+
     func downloadProfilePhoto(onSuccess: @escaping(_ data: Data) -> Void,
-                              onError: @escaping(_ errorMessage: String) -> Void){
+                              onError: @escaping(_ errorMessage: String) -> Void) {
         let defaults = UserDefaults.standard
-        if let currentUser = defaults.dictionary(forKey: "currentUser"){
+        if let currentUser = defaults.dictionary(forKey: "currentUser") {
             print(currentUser)
-            if let imageUrl = currentUser["profileImageUrl"]! as? String{
+            if let imageUrl = currentUser["profileImageUrl"]! as? String {
                 print(imageUrl)
                 let httpsReference = Ref().storageFromUrl(url: imageUrl)
-                
+
                 httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
                   if error == nil {
                     onSuccess(data!)
-                  }else{
+                  } else {
                     onError(error!.localizedDescription)
                   }
                 }

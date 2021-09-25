@@ -11,10 +11,10 @@ import FirebaseStorage
 import ProgressHUD
 
 class ProfileViewController: UITableViewController {
-    var image: UIImage? = nil
-    
+    var image: UIImage?
+
     @IBOutlet weak var profileImage: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureImagePicker()
@@ -33,7 +33,6 @@ class ProfileViewController: UITableViewController {
         return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -42,13 +41,13 @@ class ProfileViewController: UITableViewController {
         return cell
     }
 
-    func configureImagePicker(){
+    func configureImagePicker() {
         profileImage.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
         profileImage.addGestureRecognizer(tapGesture)
     }
-    
-    @objc func presentPicker(){
+
+    @objc func presentPicker() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
@@ -56,18 +55,17 @@ class ProfileViewController: UITableViewController {
         self.present(picker, animated: true, completion: nil)
     }
 
-    
-    func setupAvatar(){
+    func setupAvatar() {
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
-        
+
         Api.User.downloadProfilePhoto { (data) in
             self.profileImage.image = UIImage(data: data)
         } onError: { (error) in
             print(error)
         }
     }
-   
+
     /*
     // MARK: - Navigation
 
@@ -80,31 +78,32 @@ class ProfileViewController: UITableViewController {
 
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.image = imageSelected
         }
-        
-        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.image = imageOriginal
         }
-        
+
         self.uploadPhoto()
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
     func uploadPhoto() {
         ProgressHUD.show()
 
         let defaults = UserDefaults.standard
-        if let currentUser = defaults.dictionary(forKey: "currentUser"){
-            guard let imageData = self.image?.jpegData(compressionQuality: 0.4) else{ return}
+        if let currentUser = defaults.dictionary(forKey: "currentUser") {
+            guard let imageData = self.image?.jpegData(compressionQuality: 0.4) else { return}
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpg"
-            let currentUserUid = currentUser["uid"] as! String
+            let currentUserUid = currentUser["uid"] as? String
 
-            StorageService.savePhoto(uid: currentUserUid , data: imageData, metadata: metadata) {
+            StorageService.savePhoto(uid: currentUserUid!, data: imageData, metadata: metadata) {
                 self.profileImage.image = self.image
                 ProgressHUD.dismiss()
             } onError: { (errorMessage) in

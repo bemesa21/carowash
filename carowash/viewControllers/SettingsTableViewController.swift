@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
     ]
 
     @IBOutlet weak var profileImage: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
@@ -31,23 +31,22 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
+
         return self.settingOptions.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "iconCell", for: indexPath) as! IconTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "iconCell", for: indexPath) as? IconTableViewCell
 
         let labelText = self.settingOptions[indexPath.row].name
         let imageIcon = self.settingOptions[indexPath.row].iconName
-        cell.optionLabel.text = labelText
-        
-        cell.iconImage.image = UIImage(named: imageIcon)!
+        cell!.optionLabel.text = labelText
 
-        return cell
+        cell?.iconImage.image = UIImage(named: imageIcon)!
+
+        return cell!
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.settingOptions[indexPath.row].name == "LogOut"{
             let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
@@ -55,29 +54,30 @@ class SettingsTableViewController: UITableViewController {
                 LoginViewController
             loginPage!.modalPresentationStyle = .fullScreen
             self.present(loginPage!, animated: true, completion: nil)
-        }else{
-            performSegue(withIdentifier: self.settingOptions[indexPath.row].segueName, sender: tableView.cellForRow(at: indexPath) )
+        } else {
+            performSegue(withIdentifier: self.settingOptions[indexPath.row].segueName,
+                         sender: tableView.cellForRow(at: indexPath) )
         }
     }
-    
-    func setupAvatar(){
+
+    func setupAvatar() {
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
-        
+
         Api.User.downloadProfilePhoto { (data) in
             self.profileImage.image = UIImage(data: data)
         } onError: { (error) in
             print(error)
         }
     }
-    
-    @objc private func dismissSelf(){
+
+    @objc private func dismissSelf() {
         dismiss(animated: true, completion: nil)
     }
 
 }
 
-struct SettingsOption{
+struct SettingsOption {
     let name: String
     let segueName: String
     let iconName: String
