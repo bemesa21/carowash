@@ -9,14 +9,22 @@ import Foundation
 
 import UIKit
 
+protocol TabBarDelegate: class {
+    func displayAddressLabel(dir: String)
+}
+
 class TabBarViewController: UITabBarController {
+
+    // MARK: - Properties
+    weak var delegateLbl: TabBarDelegate?
+    let hvc = HomeViewController()
+    let cvc = CarViewController()
+    let pvc = ProfileViewController()
+
+    // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set-Up instances of vc & assign them.
-        let hvc = HomeViewController()
-        let cvc = CarViewController()
-        let pvc = ProfileViewController()
 
         hvc.title = "Home"
         cvc.title = "Cars"
@@ -29,5 +37,11 @@ class TabBarViewController: UITabBarController {
         for item in 0...2 {
             items[item].image = UIImage(systemName: images[item])
         }
+    }
+}
+
+extension TabBarViewController: MyLocationViewControllerDelegate {
+    func passLabel(label: String) {
+        self.hvc.displayAddressLabel(dir: label)
     }
 }

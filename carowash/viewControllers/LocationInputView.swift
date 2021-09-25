@@ -26,7 +26,8 @@ class LocationInputView: UIView {
     private lazy var locationTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Ingresa tu dirección"
-        textField.backgroundColor = .lightGray
+        textField.applyStyle()
+        textField.setIcon(UIImage(systemName: "location.viewfinder")!)
         textField.returnKeyType = .search
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.delegate = self
