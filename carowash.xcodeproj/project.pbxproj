@@ -21,6 +21,9 @@
 		1445C91826FE442B00769390 /* ComboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445C91726FE442B00769390 /* ComboCell.swift */; };
 		9261CA1626F98EB5001908FB /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA1526F98EB5001908FB /* StorageService.swift */; };
 		9261CA2F26F99CDF001908FB /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA2E26F99CDF001908FB /* Ref.swift */; };
+		9261CA8026FFCD88001908FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA7F26FFCD88001908FB /* User.swift */; };
+		928507712700012300E9FEF9 /* EditableOptsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */; };
+		9285077627000B5800E9FEF9 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285077527000B5800E9FEF9 /* EditViewController.swift */; };
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
@@ -85,6 +88,9 @@
 		7DEB2DEB45EBBCF9D9D9C828 /* Pods-carowash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carowash.debug.xcconfig"; path = "Target Support Files/Pods-carowash/Pods-carowash.debug.xcconfig"; sourceTree = "<group>"; };
 		9261CA1526F98EB5001908FB /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		9261CA2E26F99CDF001908FB /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
+		9261CA7F26FFCD88001908FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableOptsTableViewCell.swift; sourceTree = "<group>"; };
+		9285077527000B5800E9FEF9 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9261CA7E26FFCD76001908FB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				9261CA7F26FFCD88001908FB /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		92CC85E726E2A9D000BE71F5 /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				92CD956D26F80AF8009E6250 /* IconTableViewCell.swift */,
+				928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -206,6 +221,7 @@
 		92FB3F1426CF47BE001D068B /* carowash */ = {
 			isa = PBXGroup;
 			children = (
+				9261CA7E26FFCD76001908FB /* models */,
 				92CD956C26F80A6C009E6250 /* views */,
 				92CC85E726E2A9D000BE71F5 /* api */,
 				92FB3FBE26D0DECE001D068B /* viewControllers */,
@@ -273,6 +289,7 @@
 				92CC863A26E6F63000BE71F5 /* SettingsTableViewController.swift */,
 				92CD957D26F83AC3009E6250 /* ProfileViewController.swift */,
 				1410F46226FF997C00F6F767 /* OrderViewController.swift */,
+				9285077527000B5800E9FEF9 /* EditViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -536,6 +553,7 @@
 				9261CA1626F98EB5001908FB /* StorageService.swift in Sources */,
 				92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */,
 				92FB3F2026CF47BE001D068B /* carowash.xcdatamodeld in Sources */,
+				9261CA8026FFCD88001908FB /* User.swift in Sources */,
 				92CC863B26E6F63000BE71F5 /* SettingsTableViewController.swift in Sources */,
 				9261CA2F26F99CDF001908FB /* Ref.swift in Sources */,
 				92CC85E926E2A9EC00BE71F5 /* Api.swift in Sources */,
@@ -551,6 +569,8 @@
 				1445C8F626F632D700769390 /* LocationInputView.swift in Sources */,
 				1445C89126E57DC200769390 /* CarViewController.swift in Sources */,
 				92FB3FBA26D0DCAE001D068B /* TabBarViewController.swift in Sources */,
+				9285077627000B5800E9FEF9 /* EditViewController.swift in Sources */,
+				928507712700012300E9FEF9 /* EditableOptsTableViewCell.swift in Sources */,
 				1445C91826FE442B00769390 /* ComboCell.swift in Sources */,
 				92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */,
 				1445C90126FD809000769390 /* LocationCell.swift in Sources */,

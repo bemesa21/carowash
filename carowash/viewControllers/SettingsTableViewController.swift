@@ -9,20 +9,33 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     let settingOptions: [SettingsOption] = [
-        SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-user"),
-        SettingsOption(name: "LogOut", segueName: "logoutTapped", iconName: "icon-user")
+        SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-profile"),
+        SettingsOption(name: "Log out", segueName: "logoutTapped", iconName: "icon-logout")
     ]
+    var currentUser: User?
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
         tableView.rowHeight = 80
-        setupAvatar()
+        self.setupAvatarImage()
+        self.setupLabels()
     }
 
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupCurrentUser()
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -60,15 +73,38 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    func setupAvatar() {
+    func setupAvatarImage() {
+        self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
+    }
 
-        Api.User.downloadProfilePhoto { (data) in
-            self.profileImage.image = UIImage(data: data)
+    func downloadAvatar() {
+        Api.User.downloadProfilePhoto(imageUrl: self.currentUser!.profileImageUrl) { (data) in
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data)
+            }
         } onError: { (error) in
             print(error)
         }
+    }
+
+    func setupCurrentUser() {
+        let defaults = UserDefaults.standard
+        let currentUserId = defaults.string(forKey: "currentUser")
+        Api.User.getUser(userId: currentUserId!) { (user) in
+            self.currentUser = user
+            DispatchQueue.main.async {
+                self.nameLabel.text = user.name
+            }
+            self.downloadAvatar()
+        } onError: { (error) in
+            print(error)
+        }
+    }
+
+    func setupLabels() {
+        self.nameLabel.setTextColor()
     }
 
     @objc private func dismissSelf() {
