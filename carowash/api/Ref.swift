@@ -12,7 +12,7 @@ import FirebaseStorage
 let refUser = "users"
 let urlStorageRoot = "gs://carowash-b25eb.appspot.com"
 let storageProfileR = "profile"
-let refOrders = "orders/"
+let refOrders = "orders"
 
 class Ref {
     let databaseRoot: DatabaseReference = Database.database().reference()

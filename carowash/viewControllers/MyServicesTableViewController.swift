@@ -9,10 +9,13 @@ import UIKit
 
 class MyServicesTableViewController: UITableViewController {
     var orders: [Order] = []
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadOrders()
         tableView.rowHeight = 200
+        self.view.viewWithTag(11)?.backgroundColor = UIColor.CarOWash.blueNeon
+        self.titleLabel.setTextColor()
     }
 
     // MARK: - Table view data source
@@ -41,7 +44,7 @@ class MyServicesTableViewController: UITableViewController {
         print("downloading orders")
         let defaults = UserDefaults.standard
         let currentUserId = defaults.string(forKey: "currentUser")
-        Api.Order.getByUserId(userId: "1") { orders in
+        Api.Order.getByUserId(userId: currentUserId!) { orders in
             self.orders = orders
             DispatchQueue.main.async {
                 self.tableView.reloadData()

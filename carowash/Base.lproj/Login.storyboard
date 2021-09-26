@@ -235,13 +235,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-57-QsS">
-                                <rect key="frame" x="164" y="802" width="86" height="30"/>
-                                <state key="normal" title="LETS START"/>
+                                <rect key="frame" x="162" y="802" width="90" height="30"/>
+                                <state key="normal" title="LET'S START"/>
                                 <connections>
                                     <action selector="welcomeBack:" destination="CYa-Qo-wrH" eventType="touchUpInside" id="SCK-ZX-ilI"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wash1" translatesAutoresizingMaskIntoConstraints="NO" id="DpO-eW-lVk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car_washing" translatesAutoresizingMaskIntoConstraints="NO" id="DpO-eW-lVk">
                                 <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -249,11 +249,19 @@
                                     <constraint firstAttribute="width" constant="300" id="vsI-S4-19h"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car O Wash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYs-Gp-vqG">
+                                <rect key="frame" x="34.5" y="194" width="345" height="84"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcG-Ta-L6C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AVq-57-QsS" firstAttribute="centerX" secondItem="DbV-mZ-kbc" secondAttribute="centerX" id="0Eu-Bj-orq"/>
+                            <constraint firstItem="aYs-Gp-vqG" firstAttribute="centerX" secondItem="DbV-mZ-kbc" secondAttribute="centerX" id="4JV-TI-cWb"/>
+                            <constraint firstItem="DpO-eW-lVk" firstAttribute="top" secondItem="aYs-Gp-vqG" secondAttribute="bottom" constant="20" id="MmY-Vi-OHk"/>
                             <constraint firstItem="GcG-Ta-L6C" firstAttribute="bottom" secondItem="AVq-57-QsS" secondAttribute="bottom" constant="30" id="saH-UB-mSG"/>
                             <constraint firstItem="DpO-eW-lVk" firstAttribute="centerX" secondItem="DbV-mZ-kbc" secondAttribute="centerX" id="uds-FC-eUe"/>
                             <constraint firstItem="DpO-eW-lVk" firstAttribute="centerY" secondItem="DbV-mZ-kbc" secondAttribute="centerY" id="xZE-qY-4g7"/>
@@ -261,6 +269,7 @@
                     </view>
                     <connections>
                         <outlet property="logoImage" destination="DpO-eW-lVk" id="CPP-36-1p0"/>
+                        <outlet property="nameLabel" destination="aYs-Gp-vqG" id="6st-nM-Poq"/>
                         <outlet property="startButton" destination="AVq-57-QsS" id="sgV-vb-ksm"/>
                     </connections>
                 </viewController>
@@ -270,7 +279,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wash1" width="840" height="555"/>
+        <image name="car_washing" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

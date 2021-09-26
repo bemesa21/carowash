@@ -11,12 +11,15 @@ import FirebaseAuth
 class WelcomeViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayer()
         self.startButton.simple()
+        self.logoImage.tintColor =  UIColor.CarOWash.mistyRose
+        self.nameLabel.setTextColor()
     }
 
     @IBAction func welcomeBack(_ sender: Any) {

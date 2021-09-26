@@ -13,6 +13,7 @@ class ComboCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
+        label.setTextColor()
         return label
     }()
 
@@ -51,12 +52,15 @@ class ComboCell: UITableViewCell {
 
     // MARK: - Configuration
     func configureUI() {
-        setUpLayer()
         stack = UIStackView(arrangedSubviews: [titleLabel, descLabel, costLabel])
         stack.axis = .vertical
         stack.spacing = 4
         stack.distribution = .fillEqually
-
+        let header = UIView(frame: CGRect(x: 0, y: 0,
+                                          width: contentView.frame.width + 200,
+                                          height: 80))
+        header.backgroundColor = UIColor.CarOWash.blueNeon
+        contentView.addSubview(header)
         contentView.addSubview(stack)
         contentView.addSubview(imgView)
     }
@@ -78,29 +82,15 @@ class ComboCell: UITableViewCell {
         imgView.image = nil
     }
 
-    func setUpLayer() {
-       let gradientLayer = CAGradientLayer()
-       gradientLayer.frame = contentView.bounds
-
-       gradientLayer.colors = [
-        UIColor.CarOWash.starComandBlue.cgColor,
-        UIColor.CarOWash.aquamarine.cgColor
-      ]
-
-       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-       gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-
-        contentView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let imageSize = contentView.frame.size.height
+        let imageSize = contentView.frame.size.width / 3
 
-        stack.frame = CGRect(x: 5, y: 5, width: 300,
+        stack.frame = CGRect(x: 10, y: 5, width: contentView.frame.size.width - imageSize,
                              height: contentView.frame.size.height)
+
         imgView.frame = CGRect(x: contentView.frame.width - imageSize,
-                               y: 3, width: imageSize, height: imageSize)
+                               y: 70, width: imageSize, height: imageSize)
     }
 }

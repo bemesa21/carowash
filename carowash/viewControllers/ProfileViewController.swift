@@ -16,6 +16,7 @@ class ProfileViewController: UITableViewController, DisplayViewControllerDelegat
         UserField(field: "email", oldValue: "", newValue: "", optionLabel: "Email", uid: ""),
         UserField(field: "phone", oldValue: "", newValue: "", optionLabel: "Phone", uid: "")
     ]
+
     var image: UIImage?
     var currentUser: User?
     var selectedRow: IndexPath?
@@ -28,6 +29,7 @@ class ProfileViewController: UITableViewController, DisplayViewControllerDelegat
         tableView.rowHeight = 80
         self.configureImagePicker()
         self.setupAvatarImage()
+        self.title = "Update Profile"
     }
 
     override func viewWillAppear(_ animated: Bool) {
