@@ -63,7 +63,6 @@ class ProfileViewController: UITableViewController, DisplayViewControllerDelegat
         profileImage.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
         profileImage.addGestureRecognizer(tapGesture)
-        cameraImage.addGestureRecognizer(tapGesture)
     }
 
     @objc func presentPicker() {

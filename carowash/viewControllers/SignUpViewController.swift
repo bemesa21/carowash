@@ -63,7 +63,9 @@ class SignUpViewController: UIViewController {
         Api.User.signUp(withUsername: self.nameTextField.text!,
                         email: self.emailTextField.text!,
                         password: self.passwordTextField.text!,
-                        onSuccess: {ProgressHUD.dismiss()},
+                        onSuccess: {
+                            ProgressHUD.showSuccess("user created")
+                        },
                         onError: {(errorMessage) in  ProgressHUD.showError(errorMessage)})
 
     }
