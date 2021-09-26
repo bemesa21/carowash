@@ -11,7 +11,8 @@ import MapKit
 private let reuseIdentifier = "ComboCell"
 
 protocol HomeViewControllerDelegate: class {
-    func sendDataToOrderView(title: String, desc: String, price: String)
+    func sendDataToOrderView(title: String, desc: String,
+                             price: String, address: String)
 }
 
 class HomeViewController: UIViewController {
@@ -118,7 +119,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let orderView = OrderViewController()
             orderView.modalPresentationStyle = .fullScreen
             orderView.sendDataToOrderView(title: valuesArray[indexPath.row],
-                                          desc: val.desc, price: priceArray[indexPath.row])
+                                          desc: val.desc, price: priceArray[indexPath.row],
+                                          address: addressLabel.text!)
             self.present(orderView, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Did you selected your location?",

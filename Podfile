@@ -9,6 +9,7 @@ target 'carowash' do
   pod 'Firebase/Database'
   pod 'ProgressHUD'
   pod 'Firebase/Storage'
+  pod 'FSCalendar'
   # Pods for carowash
 
   target 'carowashTests' do

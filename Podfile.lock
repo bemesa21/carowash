@@ -30,6 +30,7 @@ PODS:
   - FirebaseStorage (7.7.0):
     - FirebaseCore (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
+  - FSCalendar (2.8.2)
   - GoogleDataTransport (8.2.0):
     - nanopb (~> 2.30907.0)
   - GoogleUtilities/AppDelegateSwizzler (7.2.2):
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - FSCalendar
   - ProgressHUD
   - SwiftLint
 
@@ -73,6 +75,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseStorage
+    - FSCalendar
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
@@ -89,6 +92,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 179bf3831213451c8addd036aca7fcf5492ec154
   FirebaseDatabase: 4da0e43266f9cb0278464a2a4b1102b3d122c245
   FirebaseStorage: 9b940765fa33494258fab6131b6180fc7c2d80f5
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
@@ -98,6 +102,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: d7063471286c42f3f47f73194d1c2849a613a1f0
+PODFILE CHECKSUM: 2e98ba7f47208cdac2eac4eaf7fb0208b90cc658
 
 COCOAPODS: 1.10.2
