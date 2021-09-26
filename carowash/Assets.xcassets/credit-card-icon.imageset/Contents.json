@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "icons8-car-cleaning-50.png",
+      "filename" : "icons8-credit-card-50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-car-cleaning-101.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "car-cleaning.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

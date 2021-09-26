@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
     }
 
     func configureUI() {
-        view.backgroundColor = UIColor.CarOWash.mistyRose
+        view.backgroundColor = .white
         setUpMapButton()
         setUpTableView()
         populateArrays()

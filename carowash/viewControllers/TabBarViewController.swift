@@ -40,7 +40,7 @@ class TabBarViewController: UITabBarController {
         self.setViewControllers([hvc, servicesController!, settingsController!], animated: false)
 
         guard let items = self.tabBar.items else { return }
-        let images = ["house.fill", "car.2.fill", "person.crop.circle.fill"]
+        let images = ["house.fill", "doc.plaintext.fill", "person.crop.circle.fill"]
         for item in 0...2 {
             items[item].image = UIImage(systemName: images[item])
         }

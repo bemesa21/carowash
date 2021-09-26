@@ -10,6 +10,8 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     let settingOptions: [SettingsOption] = [
         SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-profile"),
+        SettingsOption(name: "Payment", segueName: "", iconName: "credit-card-icon"),
+        SettingsOption(name: "Help", segueName: "", iconName: "help-icon"),
         SettingsOption(name: "Log out", segueName: "logoutTapped", iconName: "icon-logout")
     ]
 
@@ -70,9 +72,11 @@ class SettingsTableViewController: UITableViewController {
             let defaults = UserDefaults.standard
             defaults.removeObject(forKey: "currentUser")
             self.present(loginPage!, animated: true, completion: nil)
-        } else {
+        } else if self.settingOptions[indexPath.row].segueName != ""{
             performSegue(withIdentifier: self.settingOptions[indexPath.row].segueName,
                          sender: tableView.cellForRow(at: indexPath) )
+        } else {
+            print("in development")
         }
     }
 
