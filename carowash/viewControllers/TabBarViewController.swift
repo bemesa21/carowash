@@ -30,14 +30,14 @@ class TabBarViewController: UITabBarController {
         let settingsController = mainStoryBoard.instantiateViewController(
             withIdentifier: "SettingsNavigationViewController") as? UINavigationController
         settingsController!.title = "Account"
-        /*settingsController.navigationBar.barTintColor = UIColor.CarOWash.blueNeon
-        
-        settingsController.navigationBar.backgroundColor = UIColor.CarOWash.blueNeon*/
+
+        let servicesController = mainStoryBoard.instantiateViewController(
+            withIdentifier: "servicesController") as? MyServicesTableViewController
+        servicesController!.title = "My services"
 
         hvc.title = "Home"
-        cvc.title = "Cars"
 
-        self.setViewControllers([hvc, cvc, settingsController!], animated: false)
+        self.setViewControllers([hvc, servicesController!, settingsController!], animated: false)
 
         guard let items = self.tabBar.items else { return }
         let images = ["house.fill", "car.2.fill", "person.crop.circle.fill"]

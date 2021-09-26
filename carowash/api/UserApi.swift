@@ -28,8 +28,8 @@ class UserApi {
                     "profileImageUrl": "",
                     "status": "enabled"
                 ]
-                Database.database().reference().child("users")
-                    .child(authData.user.uid).updateChildValues(dict, withCompletionBlock: {(error, _) in
+                Ref().databaseSpecificUser(uid: authData.user.uid).updateChildValues(dict,
+                                                                                     withCompletionBlock: {(error, _) in
                         if error == nil {
                             onSuccess()
                         } else {
@@ -73,7 +73,7 @@ class UserApi {
 
     func getUser(userId: String, onSuccess: @escaping(_ user: User) -> Void,
                  onError: @escaping(_ errorMessage: String) -> Void) {
-        Database.database().reference().child("users/\(userId)").getData { (error, snapshot) in
+        Ref().databaseSpecificUser(uid: userId).getData { (error, snapshot) in
             if let error = error {
                 onError(error.localizedDescription)
             } else if snapshot.exists() {

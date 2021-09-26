@@ -11,10 +11,12 @@ import FirebaseAuth
 class WelcomeViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
 
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpLayer()
+        self.startButton.simple()
     }
 
     @IBAction func welcomeBack(_ sender: Any) {
@@ -37,6 +39,22 @@ class WelcomeViewController: UIViewController {
             self.present(homePage!, animated: true, completion: nil)
         }
 
+    }
+
+    func setUpLayer() {
+
+       let gradientLayer = CAGradientLayer()
+       gradientLayer.frame = view.bounds
+
+       gradientLayer.colors = [
+        UIColor.CarOWash.starComandBlue.cgColor,
+        UIColor.CarOWash.aquamarine.cgColor
+      ]
+
+       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+       gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 }

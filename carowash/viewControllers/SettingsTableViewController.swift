@@ -12,6 +12,7 @@ class SettingsTableViewController: UITableViewController {
         SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-profile"),
         SettingsOption(name: "Log out", segueName: "logoutTapped", iconName: "icon-logout")
     ]
+
     var currentUser: User?
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -61,11 +62,13 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.settingOptions[indexPath.row].name == "LogOut"{
+        if self.settingOptions[indexPath.row].name == "Log out"{
             let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginPage = loginStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as?
                 LoginViewController
             loginPage!.modalPresentationStyle = .fullScreen
+            let defaults = UserDefaults.standard
+            defaults.removeObject(forKey: "currentUser")
             self.present(loginPage!, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: self.settingOptions[indexPath.row].segueName,

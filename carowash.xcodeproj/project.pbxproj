@@ -24,6 +24,10 @@
 		9261CA8026FFCD88001908FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9261CA7F26FFCD88001908FB /* User.swift */; };
 		928507712700012300E9FEF9 /* EditableOptsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */; };
 		9285077627000B5800E9FEF9 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285077527000B5800E9FEF9 /* EditViewController.swift */; };
+		928507B8270025FE00E9FEF9 /* OrderApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507B7270025FE00E9FEF9 /* OrderApi.swift */; };
+		928507BD270035D400E9FEF9 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507BC270035D400E9FEF9 /* Order.swift */; };
+		928507C22700396F00E9FEF9 /* MyServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507C12700396F00E9FEF9 /* MyServicesTableViewController.swift */; };
+		928507C727003CCE00E9FEF9 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928507C627003CCE00E9FEF9 /* ServiceTableViewCell.swift */; };
 		92CC859A26DDBB0900BE71F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */; };
 		92CC85AF26DDCA4400BE71F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */; };
 		92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */; };
@@ -91,6 +95,10 @@
 		9261CA7F26FFCD88001908FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		928507702700012300E9FEF9 /* EditableOptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableOptsTableViewCell.swift; sourceTree = "<group>"; };
 		9285077527000B5800E9FEF9 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		928507B7270025FE00E9FEF9 /* OrderApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderApi.swift; sourceTree = "<group>"; };
+		928507BC270035D400E9FEF9 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		928507C12700396F00E9FEF9 /* MyServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServicesTableViewController.swift; sourceTree = "<group>"; };
+		928507C627003CCE00E9FEF9 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		92CC859926DDBB0900BE71F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		92CC85AE26DDCA4400BE71F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		92CC85B326DDCE4800BE71F5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9261CA7F26FFCD88001908FB /* User.swift */,
+				928507BC270035D400E9FEF9 /* Order.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 				92CC85F026E2AA1500BE71F5 /* UserApi.swift */,
 				9261CA1526F98EB5001908FB /* StorageService.swift */,
 				9261CA2E26F99CDF001908FB /* Ref.swift */,
+				928507B7270025FE00E9FEF9 /* OrderApi.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -290,6 +300,8 @@
 				92CD957D26F83AC3009E6250 /* ProfileViewController.swift */,
 				1410F46226FF997C00F6F767 /* OrderViewController.swift */,
 				9285077527000B5800E9FEF9 /* EditViewController.swift */,
+				928507C12700396F00E9FEF9 /* MyServicesTableViewController.swift */,
+				928507C627003CCE00E9FEF9 /* ServiceTableViewCell.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -547,6 +559,7 @@
 				92CC85B426DDCE4800BE71F5 /* WelcomeViewController.swift in Sources */,
 				92CC85B926DDDBE800BE71F5 /* buttons.swift in Sources */,
 				1410F45326FF4CD500F6F767 /* ComboText.swift in Sources */,
+				928507B8270025FE00E9FEF9 /* OrderApi.swift in Sources */,
 				92FB3F1A26CF47BE001D068B /* LoginViewController.swift in Sources */,
 				1445C89E26E57E2F00769390 /* HomeViewController.swift in Sources */,
 				92FB3F6F26D0BB70001D068B /* colors.swift in Sources */,
@@ -565,14 +578,17 @@
 				1445C8DC26F5A60200769390 /* LocationBarView.swift in Sources */,
 				1445C90B26FDB69E00769390 /* LocationActionView.swift in Sources */,
 				1410F46326FF997C00F6F767 /* OrderViewController.swift in Sources */,
+				928507C727003CCE00E9FEF9 /* ServiceTableViewCell.swift in Sources */,
 				1445C88C26E3D2D700769390 /* MyLocationViewController.swift in Sources */,
 				1445C8F626F632D700769390 /* LocationInputView.swift in Sources */,
 				1445C89126E57DC200769390 /* CarViewController.swift in Sources */,
 				92FB3FBA26D0DCAE001D068B /* TabBarViewController.swift in Sources */,
 				9285077627000B5800E9FEF9 /* EditViewController.swift in Sources */,
+				928507BD270035D400E9FEF9 /* Order.swift in Sources */,
 				928507712700012300E9FEF9 /* EditableOptsTableViewCell.swift in Sources */,
 				1445C91826FE442B00769390 /* ComboCell.swift in Sources */,
 				92CC85BE26DDDCED00BE71F5 /* labels.swift in Sources */,
+				928507C22700396F00E9FEF9 /* MyServicesTableViewController.swift in Sources */,
 				1445C90126FD809000769390 /* LocationCell.swift in Sources */,
 				92CC85F126E2AA1500BE71F5 /* UserApi.swift in Sources */,
 				1445C90626FD898000769390 /* MapExtension.swift in Sources */,

@@ -31,7 +31,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-gv-9oJ">
                                 <rect key="frame" x="47" y="443.5" width="320" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSV-bC-4vm">
                                 <rect key="frame" x="47" y="507.5" width="150" height="30"/>
@@ -144,7 +144,7 @@
                                     <constraint firstAttribute="width" constant="320" id="l9Q-yY-1YZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fK-dA-QLV">
                                 <rect key="frame" x="47" y="492.5" width="320" height="30"/>
@@ -234,28 +234,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD1-le-UEo">
-                                <rect key="frame" x="163" y="314" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-57-QsS">
-                                <rect key="frame" x="151" y="802" width="112" height="30"/>
-                                <state key="normal" title="COMENCEMOS!"/>
+                                <rect key="frame" x="164" y="802" width="86" height="30"/>
+                                <state key="normal" title="LETS START"/>
                                 <connections>
                                     <action selector="welcomeBack:" destination="CYa-Qo-wrH" eventType="touchUpInside" id="SCK-ZX-ilI"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wash1" translatesAutoresizingMaskIntoConstraints="NO" id="DpO-eW-lVk">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="coX-ts-Usy"/>
+                                    <constraint firstAttribute="width" constant="300" id="vsI-S4-19h"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcG-Ta-L6C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AVq-57-QsS" firstAttribute="centerX" secondItem="DbV-mZ-kbc" secondAttribute="centerX" id="0Eu-Bj-orq"/>
                             <constraint firstItem="GcG-Ta-L6C" firstAttribute="bottom" secondItem="AVq-57-QsS" secondAttribute="bottom" constant="30" id="saH-UB-mSG"/>
+                            <constraint firstItem="DpO-eW-lVk" firstAttribute="centerX" secondItem="DbV-mZ-kbc" secondAttribute="centerX" id="uds-FC-eUe"/>
+                            <constraint firstItem="DpO-eW-lVk" firstAttribute="centerY" secondItem="DbV-mZ-kbc" secondAttribute="centerY" id="xZE-qY-4g7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoImage" destination="DpO-eW-lVk" id="CPP-36-1p0"/>
+                        <outlet property="startButton" destination="AVq-57-QsS" id="sgV-vb-ksm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hJ-Yq-JuL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,6 +270,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="wash1" width="840" height="555"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

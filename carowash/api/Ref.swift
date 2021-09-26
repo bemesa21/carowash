@@ -12,6 +12,7 @@ import FirebaseStorage
 let refUser = "users"
 let urlStorageRoot = "gs://carowash-b25eb.appspot.com"
 let storageProfileR = "profile"
+let refOrders = "orders/"
 
 class Ref {
     let databaseRoot: DatabaseReference = Database.database().reference()
@@ -22,6 +23,14 @@ class Ref {
 
     func databaseSpecificUser(uid: String) -> DatabaseReference {
         return databaseUsers.child(uid)
+    }
+
+    var databaseOrders: DatabaseReference {
+        return databaseRoot.child(refOrders)
+    }
+
+    func databaseSpecificOrder(uid: String) -> DatabaseReference {
+        return databaseOrders.child(uid)
     }
 
     let storageRoot = Storage.storage().reference(forURL: urlStorageRoot)
