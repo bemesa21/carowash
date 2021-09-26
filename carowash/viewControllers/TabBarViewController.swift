@@ -34,7 +34,7 @@ class TabBarViewController: UITabBarController {
         
         settingsController.navigationBar.backgroundColor = UIColor.CarOWash.blueNeon*/
 
-	hvc.title = "Home"
+        hvc.title = "Home"
         cvc.title = "Cars"
 
         self.setViewControllers([hvc, cvc, settingsController!], animated: false)
