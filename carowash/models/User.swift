@@ -7,10 +7,11 @@
 
 import Foundation
 
-
 struct User {
     var name: String
     var profileImageUrl: String
     var uid: String
-    
+    var email: String
+    var phone: String
+
 }

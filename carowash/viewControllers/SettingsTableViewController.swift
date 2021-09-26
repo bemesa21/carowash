@@ -9,11 +9,12 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     let settingOptions: [SettingsOption] = [
-        SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-user"),
-        SettingsOption(name: "LogOut", segueName: "logoutTapped", iconName: "icon-user")
+        SettingsOption(name: "My Profile", segueName: "EditProfile", iconName: "icon-profile"),
+        SettingsOption(name: "Log out", segueName: "logoutTapped", iconName: "icon-logout")
     ]
-    var currentUser:User?
+    var currentUser: User?
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
 
     override func viewDidLoad() {
@@ -21,12 +22,21 @@ class SettingsTableViewController: UITableViewController {
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
         tableView.rowHeight = 80
         self.setupAvatarImage()
+        self.setupLabels()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.setupCurrentUser()
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -63,14 +73,14 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    func setupAvatarImage(){
+    func setupAvatarImage() {
         self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.layer.cornerRadius = 40
         self.profileImage.clipsToBounds = true
     }
-    
+
     func downloadAvatar() {
-        Api.User.downloadProfilePhoto(imageUrl: self.currentUser!.profileImageUrl){ (data) in
+        Api.User.downloadProfilePhoto(imageUrl: self.currentUser!.profileImageUrl) { (data) in
             DispatchQueue.main.async {
                 self.profileImage.image = UIImage(data: data)
             }
@@ -78,17 +88,23 @@ class SettingsTableViewController: UITableViewController {
             print(error)
         }
     }
-    
-    func setupCurrentUser(){
-        print("on setuo current user")
+
+    func setupCurrentUser() {
         let defaults = UserDefaults.standard
         let currentUserId = defaults.string(forKey: "currentUser")
         Api.User.getUser(userId: currentUserId!) { (user) in
             self.currentUser = user
+            DispatchQueue.main.async {
+                self.nameLabel.text = user.name
+            }
             self.downloadAvatar()
         } onError: { (error) in
             print(error)
         }
+    }
+
+    func setupLabels() {
+        self.nameLabel.setTextColor()
     }
 
     @objc private func dismissSelf() {

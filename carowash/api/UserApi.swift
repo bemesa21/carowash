@@ -55,8 +55,8 @@ class UserApi {
         }
     }
 
-    func downloadProfilePhoto(imageUrl:String, onSuccess: @escaping(_ data: Data) -> Void,
-                              onError: @escaping(_ errorMessage: String) -> Void) {        
+    func downloadProfilePhoto(imageUrl: String, onSuccess: @escaping(_ data: Data) -> Void,
+                              onError: @escaping(_ errorMessage: String) -> Void) {
         if imageUrl != "" {
             let httpsReference = Ref().storageFromUrl(url: imageUrl)
             httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -66,25 +66,43 @@ class UserApi {
                 onError(error!.localizedDescription)
               }
             }
-        }else{
+        } else {
             onError("noImageFound")
         }
     }
-    
+
     func getUser(userId: String, onSuccess: @escaping(_ user: User) -> Void,
-                 onError: @escaping(_ errorMessage: String) -> Void){
+                 onError: @escaping(_ errorMessage: String) -> Void) {
         Database.database().reference().child("users/\(userId)").getData { (error, snapshot) in
             if let error = error {
                 onError(error.localizedDescription)
             } else if snapshot.exists() {
-                let dict = snapshot.value as! [String: Any]
-                let name = dict["name"] as? String
-                let uid = dict["uid"] as? String
-                let profileImage = dict["profileImageUrl"] as? String
-                let currentUser = User(name: name!, profileImageUrl: profileImage!, uid: uid!)
+                let dict = snapshot.value as? [String: Any]
+                let name = dict!["name"] as? String
+                let uid = dict!["uid"] as? String
+                let profileImage = dict!["profileImageUrl"] as? String
+                let email = dict!["email"] as? String ?? ""
+                let phone = dict!["phone"] as? String ?? ""
+
+                let currentUser = User(name: name!,
+                                       profileImageUrl: profileImage!,
+                                       uid: uid!,
+                                       email: email,
+                                       phone: phone)
                 onSuccess(currentUser)
             } else {
                 onError("User not found")
+            }
+        }
+    }
+
+    func updateUser(userId: String, key: String, value: String, onSuccess: @escaping() -> Void,
+                    onError: @escaping(_ errorMessage: String) -> Void) {
+        Database.database().reference().child("users/\(userId)").updateChildValues([key: value]) {error, _ in
+            if let error = error {
+                onError(error.localizedDescription)
+            } else {
+                onSuccess()
             }
         }
     }
