@@ -10,21 +10,19 @@ import MapKit
 
 private let reuseIdentifier = "ComboCell"
 
-private enum VehicleSelector {
-    case isCar
-    case isVan
-    case isBike
-
-    init() {
-        self = .isVan
-    }
+protocol HomeViewControllerDelegate: class {
+    func sendDataToOrderView(title: String, desc: String, price: String)
 }
 
 class HomeViewController: UIViewController {
 
     // MARK: - Properties
     private let tableView = UITableView()
-    private var vehicleEnum = VehicleSelector()
+    private let val = CombosWash()
+    private let iconArr = ["carIcon", "vanIcon", "bikeIcon"]
+    private var valuesArray = [String]()
+    private var priceArray = [String]()
+    weak var delegate: HomeViewControllerDelegate?
 
     var addressLabel: UILabel = {
         let label = UILabel()
@@ -69,6 +67,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.CarOWash.mistyRose
         setUpMapButton()
         setUpTableView()
+        populateArrays()
     }
 
     func setUpMapButton() {
@@ -80,6 +79,11 @@ class HomeViewController: UIViewController {
         addressLabel.centerY(inView: mapButton)
         addressLabel.centerX(inView: view)
         addressLabel.anchor(left: mapButton.rightAnchor, paddingLeft: 10)
+    }
+
+    func populateArrays() {
+        valuesArray = [val.comboAuto, val.comboVan, val.comboBike]
+        priceArray = [val.priceComboAuto, val.priceComboVan, val.priceComboBike]
     }
 
     // MARK: - Selectors
@@ -98,11 +102,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ComboCell
-        let val = CombosWash()
-        let valuesArray = [val.comboAuto, val.comboVan, val.comboBike]
-        let priceArray = [val.priceComboAuto, val.priceComboVan, val.priceComboBike]
-        let iconArr = ["carIcon", "vanIcon", "bikeIcon"]
-
         cell?.configureCell(titleText: valuesArray[indexPath.row],
                             descText: val.desc,
                             cost: priceArray[indexPath.row],
@@ -115,10 +114,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell Selected")
         if addressLabel.text != nil {
             let orderView = OrderViewController()
             orderView.modalPresentationStyle = .fullScreen
+            orderView.sendDataToOrderView(title: valuesArray[indexPath.row],
+                                          desc: val.desc, price: priceArray[indexPath.row])
             self.present(orderView, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Did you selected your location?",
