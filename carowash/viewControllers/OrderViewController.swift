@@ -87,6 +87,21 @@ class OrderViewController: UIViewController {
 
     // MARK: - Selectors
     @objc func confirmOrderButtonPressed() {
+        print("presed")
+        print("presed")
+        let dict: [String: String] = [
+                            "service": "servicio1",
+                            "date": "10/10/2021",
+                            "cost": "",
+                            "status": "pending",
+                            "userId": "1",
+                            "address": "here en mi casa"
+                        ]
+        Api.Order.create(dict: dict, onSuccess: {
+            print("yei")
+        }, onError: { (error) in
+            print(error)
+        })
 
     }
 

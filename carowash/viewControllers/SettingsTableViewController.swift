@@ -23,7 +23,7 @@ class SettingsTableViewController: UITableViewController {
         self.view.viewWithTag(10)?.backgroundColor = UIColor.CarOWash.blueNeon
         tableView.rowHeight = 80
         self.setupAvatarImage()
-        self.setupLabels()   
+        self.setupLabels()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,11 +62,13 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.settingOptions[indexPath.row].name == "LogOut"{
+        if self.settingOptions[indexPath.row].name == "Log out"{
             let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginPage = loginStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as?
                 LoginViewController
             loginPage!.modalPresentationStyle = .fullScreen
+            let defaults = UserDefaults.standard
+            defaults.removeObject(forKey: "currentUser")
             self.present(loginPage!, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: self.settingOptions[indexPath.row].segueName,
@@ -90,7 +92,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    func setupCurrentUser() {    
+    func setupCurrentUser() {
         let defaults = UserDefaults.standard
         let currentUserId = defaults.string(forKey: "currentUser")
         Api.User.getUser(userId: currentUserId!) { (user) in
